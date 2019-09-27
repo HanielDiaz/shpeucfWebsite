@@ -1,0 +1,19 @@
+#header {
+    background-color: #ffe4c4;
+    flex: .1;
+}
+
+#body {
+    background-color: #da8a2a;
+    flex: .4;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.alignSelf {
+    align-self: center;
+}
