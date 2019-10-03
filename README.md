@@ -6,14 +6,20 @@
 ## Installation
 
 ```bash
-git clone https://github.com/notrab/create-react-app-redux.git
-cd create-react-app-redux
-yarn
+git clone *REPO-ADDRESS*
+cd shpeucfWebsite
 ```
 
 ## Get started
 
+```
+Install Yarn
+Install Node
+```
+Once you've installed: 
+
 ```bash
+npm install
 yarn start
 ```
 

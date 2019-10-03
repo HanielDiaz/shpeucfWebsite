@@ -1,9 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import { Route, Switch } from 'react-router'
 import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from './store'
 import Home from './containers/home'
+import About from './containers/about'
 import firebase from 'firebase';
 
 import 'sanitize.css/sanitize.css'
@@ -25,7 +27,10 @@ render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        <Home />
+        <Switch>
+          <Route exact path="/" render={() => (<Home/>)}/>
+          <Route path="/About" render={() => (<About/>)}/>
+        </Switch>
       </div>
     </ConnectedRouter>
   </Provider>,

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import '../style/main.css'
 
 export default class Home extends Component {
@@ -28,17 +29,17 @@ export default class Home extends Component {
         return (
             <div id='page'>
                 <div className='center' id='header'>
-                    <p>Header</p>
+                    <ul>
+                        <li>
+                            <Link to="/About">About</Link>
+                        </li>
+                    </ul>
                 </div>
                 <div className='center' id='body' style={{flex: 1, flexDirection: 'column'}}>
                     <title>Hello</title>
                     <button  
                     style={{flex: 1, alignSelf: 'center'}}
-                    onClick={() => {
-                    this.setState({
-                        header: 'header'
-                    })
-                }}/>
+                    onClick={() => {this.props.history.push('About')}}/>
                 </div>
             </div>
         )

@@ -15,7 +15,9 @@ export default class About extends Component {
     render() {
         return (
             <div id='page'>
-               
+               <div style={{flex: 1, width: 'auto', backgroundColor: '#f00'}}>
+                    <h1>hello</h1>
+                </div>
             </div>
         )
     }
