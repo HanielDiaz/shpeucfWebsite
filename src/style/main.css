@@ -1,11 +1,23 @@
 #header {
     background-color: #ffe4c4;
-    flex: .1;
+    flex: 1;
+    flex-direction: row;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-self: center
+
 }
 
 #body {
-    background-color: #da8a2a;
-    flex: .4;
+    background-color: #f00;
+    flex: 1;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-self: center
 }
 
 #page {
@@ -16,4 +28,9 @@
 
 .alignSelf {
     align-self: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-self: center
 }
