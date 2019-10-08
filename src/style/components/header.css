@@ -1,0 +1,17 @@
+.containerGeneral {
+    flex: 1;
+    height: 60;
+    flex-Direction: 'row';
+    background-color: gray;
+}
+
+.list {
+    flex: 1;
+    flex-direction: row;
+}
+
+.listElement {
+     flex: 1;
+     flex-Direction: 'row';
+     color: red;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Header } from '../components'
+// import { Link } from 'react-router-dom'
 import '../style/main.css'
 
 export default class Home extends Component {
@@ -52,15 +53,7 @@ export default class Home extends Component {
 
         return (
             <div id='page'>
-                <div className='center' id='header'>
-                    <ul>
-                        <li>
-                            <Link to="/About">
-                                <div style={{ width: 'auto', height: 300, backgroundColor: '#f00' }}/>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
+                <Header/>
                 {this.renderOfficeHours()}
                 <div className='center' id='body' style={{flex: 1, flexDirection: 'column'}}>
                     <title>Hello</title>
