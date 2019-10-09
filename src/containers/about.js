@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Header } from '../components'
 import '../style/main.css'
 
 export default class About extends Component {
@@ -15,6 +16,7 @@ export default class About extends Component {
     render() {
         return (
             <div id='page'>
+                <Header/>
                <div style={{flex: 1, width: 'auto', backgroundColor: '#f00'}}>
                     <h1>hello</h1>
                 </div>
