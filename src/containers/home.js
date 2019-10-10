@@ -14,23 +14,29 @@ export default class Home extends Component {
 
 		this.officeHourSchedule = {
 			room: "ENG1 ROOM 140",
-			days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+			days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
 			dates :	[
+                    {
+                        day: "Tuesday",
+                        name: "Emiliano",
+                        time: ["3PM - 5PM"]
+                    },
 					{
 						day: "Monday",
 						name: "Jaime",
-						time: ["11AM - 12PM"]
+						time: ["10AM - 12PM", "1PM - 2PM"]
+					},
+					{
+						day: "Monday",
+                        name: "Jaime",
+                        time: ["3PM - 5PM"]
 					},
 					{
 						day: "Monday",
 						name: "Karen",
 						time: ["2PM - 3PM"]
 					},
-					{
-						day: "Tuesday",
-						name: "Emiliano",
-						time: ["3PM - 5PM"]
-					},
+					
 					{
 						day: "Wednesday",
 						name: "Jaime",
@@ -94,9 +100,9 @@ export default class Home extends Component {
                 </div>
                 <div className='center' id='body' style={{flex: 1, flexDirection: 'column'}}>
                     <title>Hello</title>
-                    <button  
+                    {/* <button  
                     style={{flex: 1, alignSelf: 'center'}}
-                    onClick={() => {this.props.history.push('About')}}/>
+                    onClick={() => {}}/> */}
                 </div>
 				<Collapsible
 				trigger="Start here"
