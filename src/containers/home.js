@@ -14,48 +14,58 @@ export default class Home extends Component {
 
 		this.officeHourSchedule = {
 			room: "ENG1 ROOM 140",
-			dates : {
-				monday: [
-					{	name: "Jaime",
-			            time: "11AM - 12PM"
+			dates :	[
+					{
+						day: "Monday",
+						name: "Jaime",
+						time: ["11AM - 12PM"]
 					},
-					{	name: "Karen",
-						time: "2PM - 3PM"
-					}
-			    ],
-				tuesday: [
-					{	name: "Emiliano",
-						time: "3PM - 5PM"
-					}
-				],
-				wednesday: [
-					{	name: "Jaime",
-						time: "11AM - 12PM"
+					{
+						day: "Monday",
+						name: "Karen",
+						time: ["2PM - 3PM"]
 					},
-					{	name: "Tomas",
-						time: "12PM - 1PM"
+					{
+						day: "Tuesday",
+						name: "Emiliano",
+						time: ["3PM - 5PM"]
 					},
-					{	name: "Karen",
-						time: "3PM - 4PM"
-					}
-				],
-				thursday: [
-					{	name: "Richard",
-						time: "1PM - 2PM"
+					{
+						day: "Wednesday",
+						name: "Jaime",
+						time: ["11AM - 12PM"]
 					},
-					{	name: "Tomas",
-						time: "3PM - 4PM"
+					{
+						day: "Wednesday",
+						name: "Tomas",
+						time: ["12PM - 1PM"]
 					},
-					{	name: "Emiliano",
-						time:  "3PM - 5PM"
+					{
+						day: "Wednesday",
+						name: "Karen",
+						time: ["3PM - 4PM"]
+					},
+					{
+						day: "Thursday",
+						name: "Richard",
+						time: ["1PM - 2PM"]
+					},
+					{
+						day: "Thursday",
+						name: "Tomas",
+						time: ["3PM - 4PM"]
+					},
+					{
+						day: "Thursday",
+						name: "Emiliano",
+						time: ["3PM - 4PM", "4PM - 5PM"]
+					},
+					{
+						day: "Friday",
+						name: "Karen",
+						time: ["3PM - 4PM"]
 					}
-				],
-				friday: [
-					{	name: "Karen",
-						time: "3PM - 4PM"
-					}
-				]
-			},
+				]			
 		}
 		
 		this.Sponsors = [
@@ -79,62 +89,52 @@ export default class Home extends Component {
 	}
 
     render() {
-		console.log(Object.keys(this.officeHourSchedule.dates))
-		console.log(Object.keys(this.officeHourSchedule.dates.monday))
-		console.log(this.officeHourSchedule.dates.monday[0].time.length)
+		//------------------------------------------------------------------------------------------------//
 		let rows = []
 		let cell = []
-		for (var day in this.officeHourSchedule.dates){
-			cell = []
-			cell.push(<td> {day.charAt(0).toUpperCase() + day.slice(1)} </td>)
-			switch(day){
-				case 'monday':
-					for(var personObject in this.officeHourSchedule.dates.monday){
-						cell.push( <td align='left'> {this.officeHourSchedule.dates.monday[personObject].name} </td>)
-						cell.push( <td align='right'> {this.officeHourSchedule.dates.monday[personObject].time} </td>)
-						rows.push(<tr> {cell} </tr>)
-						cell = []
-						cell.push(<td></td>)
+		//console.log(Object.keys(this.officeHourSchedule.dates))
+		let organizedData = []
+		let x = 0, y = 0, z = 0, count = 0, i = 0
+		let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+		let currentDay = days[0]
+		
+		while (count < this.officeHourSchedule.dates.length){
+			if(this.officeHourSchedule.dates[x].day == currentDay){
+				organizedData.push(this.officeHourSchedule.dates[x])
+				count++
+			}
+			x++
+			if(x >= this.officeHourSchedule.dates.length){ //all data has been cycled, array of currentDay is complete
+				x = 0 //reset dates counter
+				//addToScheduleTable(organizedData)
+				//--------------------------------//
+				cell = []
+				cell.push(<td> {currentDay} </td>) //day.charAt(0).toUpperCase() + day.slice(1).toLowerCase()
+				for(z = 0; z < organizedData.length; z++){
+					cell.push( <td align='left'> {organizedData[z].name} </td>)
+					for(i = 0; i < organizedData[z].time.length; i++){
+						if(i > 0){
+							rows.push(<tr> {cell} </tr>)
+							cell = []
+							cell.push(<td></td>)
+							cell.push(<td></td>)
+						}
+						cell.push( <td align='right'> {organizedData[z].time[i]} </td>)
 					}
-					break;
-				case 'tuesday':
-					for(var personObject in this.officeHourSchedule.dates.tuesday){
-						cell.push( <td align='left'> {this.officeHourSchedule.dates.tuesday[personObject].name} </td>)
-						cell.push( <td align='right'> {this.officeHourSchedule.dates.tuesday[personObject].time} </td>)
-						rows.push(<tr> {cell} </tr>)
-						cell = []
-						cell.push(<td></td>)
-					}
-					break;
-				case 'wednesday':
-					for(var personObject in this.officeHourSchedule.dates.wednesday){
-						cell.push( <td align='left'> {this.officeHourSchedule.dates.wednesday[personObject].name} </td>)
-						cell.push( <td align='right'> {this.officeHourSchedule.dates.wednesday[personObject].time} </td>)
-						rows.push(<tr> {cell} </tr>)
-						cell = []
-						cell.push(<td></td>)
-					}
-					break;
-				case 'thursday':
-					for(var personObject in this.officeHourSchedule.dates.thursday){
-						cell.push( <td align='left'> {this.officeHourSchedule.dates.thursday[personObject].name} </td>)
-						cell.push( <td align='right'> {this.officeHourSchedule.dates.thursday[personObject].time} </td>)
-						rows.push(<tr> {cell} </tr>)
-						cell = []
-						cell.push(<td></td>)
-					}
-					break;
-				case 'friday':
-					for(var personObject in this.officeHourSchedule.dates.friday){
-						cell.push( <td align='left'> {this.officeHourSchedule.dates.friday[personObject].name} </td>)
-						cell.push( <td align='right'> {this.officeHourSchedule.dates.friday[personObject].time} </td>)
-						rows.push(<tr> {cell} </tr>)
-						cell = []
-						cell.push(<td></td>)
-					}
-					break;
+					rows.push(<tr> {cell} </tr>)
+					cell = []
+					cell.push(<td></td>)
+				}
+				//--------------------------------//
+				y++ //iterate current day
+				if(y < days.length){ //make sure y doesn't go over the number of days
+					currentDay = days[y] //set current day
+				}
+				organizedData = []
 			}
 		}
+		//------------------------------------------------------------------------------------------------//
+			
         return (
             <div id='page'>
                 <div className='center' id='header'>
@@ -165,6 +165,12 @@ export default class Home extends Component {
         )
     }
 	
+}
+
+function organizeSchedule(officeHourSchedule){
+}
+
+function addToScheduleTable(organizedData){
 }
 
 const stylesheet = {
