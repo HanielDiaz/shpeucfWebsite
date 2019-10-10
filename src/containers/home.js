@@ -14,6 +14,7 @@ export default class Home extends Component {
 
 		this.officeHourSchedule = {
 			room: "ENG1 ROOM 140",
+			days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 			dates :	[
 					{
 						day: "Monday",
@@ -116,12 +117,11 @@ export default class Home extends Component {
 
 function organizeSchedule(officeHourSchedule){
 	let rows = []
-	let cell = []
 	//console.log(Object.keys(this.officeHourSchedule.dates))
 	let organizedData = []
 	let x = 0, y = 0, count = 0
-	let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-	let currentDay = days[0]
+	
+	let currentDay = officeHourSchedule.days[0]
 	
 	while (count < officeHourSchedule.dates.length){
 		if(officeHourSchedule.dates[x].day == currentDay){
@@ -131,10 +131,10 @@ function organizeSchedule(officeHourSchedule){
 		x++
 		if(x >= officeHourSchedule.dates.length){ //all data has been cycled, array of currentDay is complete
 			x = 0 //reset dates counter
-			rows = addToScheduleTable(organizedData, rows, currentDay)
+			rows = addToScheduleTable(organizedData, rows, currentDay) //update table
 			y++ //iterate current day
-			if(y < days.length){ //make sure y doesn't go over the number of days
-				currentDay = days[y] //set current day
+			if(y < officeHourSchedule.days.length){ //make sure y doesn't go over the number of days
+				currentDay = officeHourSchedule.days[y] //set current day
 			}
 			organizedData = []
 		}
