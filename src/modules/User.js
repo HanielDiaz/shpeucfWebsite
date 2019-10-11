@@ -563,7 +563,10 @@ export const loginUser = ({
 };
 
 const loginUserSuccess = (dispatch, user) => {
-    alert('Success!')
+   const { 
+       currentUser
+   } = firebase.auth();
+   firebase.database().ref('/tests/fucksGiven').push('none');
     dispatch({
         type: ACTIONS.ENTER_APP,
         payload: user
