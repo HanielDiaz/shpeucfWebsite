@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Collapsible from 'react-collapsible';
+//import { Sponsors } from '../components'
 import { Link } from 'react-router-dom'
 import '../style/main.css'
 
@@ -14,7 +15,7 @@ export default class Home extends Component {
 
 		this.officeHourSchedule = {
 			room: "ENG1 ROOM 140",
-			days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+			days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
 			dates :	[
 					{
 						day: "Monday",
@@ -69,20 +70,82 @@ export default class Home extends Component {
 				]			
 		}
 		
-		this.Sponsors = [
+		this.sponsors = [
             {
                 name: "Google",
-                photo: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
+                link: "https://about.google/",
+                description: "Google does stuff"
+            },
+			{
+                name: "Google",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
                 link: "https://about.google/",
                 description: "Google does stuff"
             }
+			
         ]
 	}
 	
     render() {
-		let rows = []
-		rows = organizeSchedule(this.officeHourSchedule)
-			
+		let scheduleRows = [], sponsorRows = []
+		scheduleRows = organizeSchedule(this.officeHourSchedule)
+		sponsorRows = createSponsors(this.sponsors)
+		
         return (
             <div id='page'>
                 <div className='center' id='header'>
@@ -105,14 +168,36 @@ export default class Home extends Component {
 				>
 					<table id="simple-board">
 						<tbody>
-							{rows}
+							{scheduleRows}
 						</tbody>
 					</table>
 				</Collapsible>
+					<table id = "sponsors">
+						<tbody>
+							{sponsorRows}
+						</tbody>
+					</table>
+
             </div>
         )
     }
-	
+}
+
+function createSponsors(sponsors){
+	let i=0, length = 6//Math.ceil((sponsors.length)/2)
+	let cells = []
+	let rows = []
+	for(i=0; i<sponsors.length; i++){
+		if(i%length == 0){
+			rows.push(<tr> {cells} </tr>)
+		}
+		cells.push(<td>
+			<li>
+				<a href={sponsors[i].link}><img src={sponsors[i].source}/></a>
+			</li></td>)
+	}
+	rows.push(<tr> {cells} </tr>)
+	return rows
 }
 
 function organizeSchedule(officeHourSchedule){
