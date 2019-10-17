@@ -16,7 +16,10 @@ export default class Home extends Component {
                 name: "Hello",
                 date: "2019-08-28",
                 time: "Now",
-                id: "1"
+                id: "1",
+                committee: "Hello",
+                location: "here",
+                description: "no",
             },
             {
                 name: "GBM",
@@ -36,7 +39,7 @@ export default class Home extends Component {
         const {
             collapsibleContainer
         } = stylesheet;
-
+        
         return (
             <div id='page'>
                 <Header/>

@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import '../style/components/calendar.css'
+import { convertNumToDate } from '../utils';
+import '../style/components/calendar.css';
+import '../style/main.css';
 
 class Calendar extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            selectedEvent: -1,
+        }
     }
 
     componentWillMount() {
@@ -20,20 +24,43 @@ class Calendar extends Component {
             Option to see future events
     */
 
-    renderItemOne(event) {
+    renderItemOne(event, index) {
            const {
-            name,
             date,
+            description,
+            eventActive,
+            location,
+            name,
+            points,
             time,
-            id
         } = event;
         
+        let active = (eventActive) ? {backgroundColor: '#FFC200'} : {backgroundColor: '#fff'}
+        let dateObj = convertNumToDate(date);
         return (
-            <div key={id} className='container'>
-            <h3>{name}</h3>
-                <div style={{flexDirection: 'row'}}>
-                    <p style={{flex: 1,}}>Date: {date}</p>
-                    <p>time: {time}</p>
+            <div key={name} className='container' style={active}
+            onMouseEnter={() => {
+                    this.setState({selectedEvent: index})
+            }}
+            onMouseLeave={() => {
+                setTimeout(() => this.setState({selectedEvent: -1}), 500)
+            }}
+            >
+                <div className='date unselectable'>
+                    <h2>{dateObj.day}</h2>
+                    <span>{dateObj.month}, {dateObj.year}</span>
+                </div>
+                <div className = 'info unselectable' >
+                    <div className='eventData'>
+                        <h3 >{name}</h3>
+                        <p>Name: {name}</p>
+                        <p>time: {time}</p>
+                        <p>Location: {location}</p>
+                        <p>points: {points}</p>
+                    </div>
+                   <div>
+                        <p className='description'>Description: {description}</p>
+                    </div>
                 </div>
             </div>
         )
@@ -51,7 +78,7 @@ class Calendar extends Component {
         return (
             <div style={container}>
                 <h2 style={{alignSelf: 'center'}}>{title}</h2>
-               {events.map(event => this.renderItemOne(event))}
+               {events.map((event, index) => this.renderItemOne(event, index))}
             </div>
         )
     }
@@ -64,8 +91,14 @@ Calendar.propTypes = {
         PropTypes.shape({
             name: PropTypes.string.isRequired,
             date: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            location: PropTypes.string.isRequired,
+            points: PropTypes.number.isRequired,
             time: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
+            committee: PropTypes.string,
+            type: PropTypes.string,
+            eventActive: PropTypes.bool,
         })).isRequired,
    
 }
@@ -76,7 +109,7 @@ const Styles = {
         flex: 1,
         backgroundColor: '#024FD19a',
         width: 500,
-        height: 500,
+        height: 300,
         flexDirection: 'row',
         paddingLeft: 5,
         paddingRight: 5,

@@ -1,12 +1,74 @@
 .container {
-    background-color: #fff;
+    display: flex;
+    overflow: hidden;
     border-radius: 3px;
-    padding: 0px 10px;
+    padding: 2px 10px 10px;
     margin: 5px;
-    width: auto;
-    height: 100px;
     box-shadow: 2px 5px 10px #000a;
     flex: 1;
+    height: 75px;
+    flex-wrap: row wrap;
+    transition: height .3s ease-out;
+    -moz-transition: height .3s ease-out;
+    -o-transition: height .3s ease-out;
+    -webkit-transition: height .3s ease-out;
+}
+
+.container:hover {
+    height: 125px;
+    transition: height .3s ease-in;
+    -moz-transition: height .3s ease-in;
+    -o-transition: height .3s ease-in;
+    -webkit-transition: height .3s ease-in;
+}
+
+.eventData {
+    flex: .5;
+}
+
+.description {
+    flex-wrap: inherit wrap;
+    flex: .7;
+    padding-top: 100px;
+    transition: padding-top .3s ease-in;
+    -moz-transition: padding-top .3s ease-in;
+    -o-transition: padding-top .3s ease-in;
+    -webkit-transition: padding-top .3s ease-in;
+}
+
+.container:hover .description{
+    padding-top: 2px;
+    transition: padding-top .3s ease-in;
+    -moz-transition: padding-top .3s ease-in;
+    -o-transition: padding-top .3s ease-in;
+    -webkit-transition: padding-top .3s ease-in;
+}
+
+.date {
+    flex: .20;
+    padding-top: 2px;
+    flex-wrap: column nowrap;
+}
+
+.info {
+    display: flex;
+    flex: 1;
+    padding-top: 7px;
+    flex-wrap: row nowrap;
+}
+
+div {
+    flex: 1;
+}
+
+h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+h2 {
+    margin: 0px;
+    font-size: 40px;
 }
 
 h3 {
@@ -16,7 +78,7 @@ h3 {
 }
 
 p {
-    padding: 0px;
+    padding: 1px;
     margin: 0px;
     flex: 1;
 }
