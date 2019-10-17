@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Header } from '../components'
+import { Header, Calendar } from '../components'
 // import { Link } from 'react-router-dom'
 import '../style/main.css'
 
@@ -11,33 +11,19 @@ export default class Home extends Component {
             header: 'title'
         }
 
-        this.officeHourSchedule = {
-            room: "ENG1 ROOM 140",
-            dates: {
-                Monday: [],
-                Tuesday: [],
-                Wednesday: [
-                    {
-                        name: "Jaime",
-                        time: ["11AM - 12PM", "10PM - 11PM"]
-                    }
-
-                ],
-                thursday: [],
-                friday: []
-            },
-            count1: 0,
-            count2: 0,
-            currentDay: "",
-        }
-
-        this.Sponsors = [
+        this.events =  [
             {
-                name: "Google",
-                photo: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
-            }
+                name: "Hello",
+                date: "2019-08-28",
+                time: "Now",
+                id: "1"
+            },
+            {
+                name: "GBM",
+                date: "2019-08-29",
+                time: "Now",
+                id: "1"
+            },
         ]
     }
     componentWillMount() {
@@ -55,6 +41,10 @@ export default class Home extends Component {
             <div id='page'>
                 <Header/>
                 {this.renderOfficeHours()}
+                <Calendar 
+                    title="Events"
+                    events={this.events}
+                />
                 <div className='center' id='body' style={{flex: 1, flexDirection: 'column'}}>
                     <title>Hello</title>
                     <button  
