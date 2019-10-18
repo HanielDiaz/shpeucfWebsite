@@ -12,6 +12,7 @@ export default class Home extends Component {
             color: '#fff',
             header: 'title'
         }
+		
 		this.events =  [
             {
                 name: "Hello",
@@ -159,7 +160,6 @@ export default class Home extends Component {
 	}
 	
     render() {	
-        return (
 		const {
 
             collapsibleContainer
@@ -169,7 +169,6 @@ export default class Home extends Component {
         
 
         return (
-
             <div id='page'>
                 <Header/>
                 <Calendar 
