@@ -14,7 +14,7 @@ export default class Home extends Component {
         this.events =  [
             {
                 name: "Hello",
-                date: "2019-08-28",
+                date: "2019-08-40",
                 time: "Now",
                 id: "1",
                 committee: "Hello",
@@ -47,6 +47,7 @@ export default class Home extends Component {
                 <Calendar 
                     title="Events"
                     events={this.events}
+                    numOfElements={1}
                 />
                 <div className='center' id='body' style={{flex: 1, flexDirection: 'column'}}>
                     <title>Hello</title>

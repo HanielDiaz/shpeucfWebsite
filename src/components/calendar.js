@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { convertNumToDate } from '../utils';
+import { convertNumToDate, distance } from '../utils';
 import '../style/components/calendar.css';
 import '../style/main.css';
 
@@ -10,19 +10,26 @@ class Calendar extends Component {
         this.state = {
             selectedEvent: -1,
         }
+        this.months = {
+            "Jan": 0,
+            "Feb": 1,
+            "Mar": 2,
+            "April": 3,
+            "May": 4,
+            "June": 5,
+            "July": 6,
+            "Aug": 7,
+            "Sep": 8,
+            "Oct": 9,
+            "Nov": 10,
+            "Dec": 11
+        }
     }
+    
 
     componentWillMount() {
         
     }
-
-    /*
-        Things that need to be shown:
-            Today's Date,
-            Events for the next 30 days,
-            The Month we're in
-            Option to see future events
-    */
 
     renderItemOne(event, index) {
            const {
@@ -36,7 +43,6 @@ class Calendar extends Component {
         } = event;
         
         let active = (eventActive) ? {backgroundColor: '#FFC200'} : {backgroundColor: '#fff'}
-        let dateObj = convertNumToDate(date);
         return (
             <div key={name} className='container' style={active}
             onMouseEnter={() => {
@@ -47,8 +53,8 @@ class Calendar extends Component {
             }}
             >
                 <div className='date unselectable'>
-                    <h2>{dateObj.day}</h2>
-                    <span>{dateObj.month}, {dateObj.year}</span>
+                    <h2>{date.day}</h2>
+                    <span>{date.month}, {date.year}</span>
                 </div>
                 <div className = 'info unselectable' >
                     <div className='eventData'>
@@ -69,16 +75,50 @@ class Calendar extends Component {
     render() {
         const {
             events,
-            title
+            title,
+            numOfElements
         } = this.props;
         const {
             container
         } = Styles;
+        let formattedEvents = [];
+        if(events && events[0] && events[0].date !== Object(events[0].date)){
+            events.map((item, index) => {
+                    formattedEvents.push(Object.assign({}, item));
+                    let date = convertNumToDate(formattedEvents[index].date)
+                    formattedEvents[index].date = {};
+                    formattedEvents[index].date.day = date.day;
+                    formattedEvents[index].date.month = date.month;
+                    formattedEvents[index].date.year = date.year;
+            })
+        }
+        formattedEvents.sort((a,b) => {
+            const {
+                year: yearA,
+                month: monthA,
+                day: dayA
+            } = a.date;
+
+            const {
+                year: yearB,
+                month: monthB,
+                day: dayB
+            } = b.date;
+            if (yearA >= yearB){
+                console.log(this.months[monthA], this.months[monthB], this.months[monthA] >= this.months[monthB])
+                if (this.months[monthA] >= this.months[monthB]) {
+                    console.log(dayA, dayB, (dayA <= dayB) ? 1 : -1)
+                    return (dayA > dayB) ? 1 : -1;
+                } 
+                else return -1;
+            }
+            else return -1;
+        })
 
         return (
             <div style={container}>
                 <h2 style={{alignSelf: 'center'}}>{title}</h2>
-               {events.map((event, index) => this.renderItemOne(event, index))}
+               {formattedEvents.map((event, index) => this.renderItemOne(event, index))}
             </div>
         )
     }
@@ -99,6 +139,7 @@ Calendar.propTypes = {
             committee: PropTypes.string,
             type: PropTypes.string,
             eventActive: PropTypes.bool,
+            numOfElements: PropTypes.number,
         })).isRequired,
    
 }
