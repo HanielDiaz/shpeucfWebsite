@@ -14,11 +14,9 @@ export default class About extends Component {
             header: 'title'
         }
     }
-
     componentWillMount() {
-
+        
     }
-
     onButtonPress() {
         const {
             email,
@@ -35,7 +33,7 @@ export default class About extends Component {
             this.props.loginUser({ email, password });
         }
     }
-
+    
     render() {
         return (
             <div id='page'>
