@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import Collapsible from 'react-collapsible';
+<<<<<<< Updated upstream
 import { Sponsors } from '../components'
 import { OfficeHours } from '../components'
+=======
+<<<<<<< Updated upstream
+=======
+import { Header, Sponsors, Calendar, OfficeHours } from '../components'
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 import { Link } from 'react-router-dom'
 import '../style/main.css'
 
@@ -13,6 +20,24 @@ export default class Home extends Component {
             color: '#fff',
             header: 'title'
         }
+		
+		this.events =  [
+            {
+                name: "Hello",
+                date: "2019-08-28",
+                time: "Now",
+                id: "1",
+                committee: "Hello",
+                location: "here",
+                description: "no",
+            },
+            {
+                name: "GBM",
+                date: "2019-08-29",
+                time: "Now",
+                id: "1"
+            },
+        ]
 
 		this.officeHourSchedule = {
 			room: "ENG1 ROOM 140",
@@ -145,49 +170,61 @@ export default class Home extends Component {
     render() {	
         return (
             <div id='page'>
-                <div className='center' id='header'>
-                    <ul>
-                        <li>
-                            <Link to="/About">About</Link>
-                        </li>
-                    </ul>
-                </div>
+                <Header/>
+                <Calendar 
+                    title="Events"
+                    events={this.events}
+                />
+				<OfficeHours
+					officeHourSchedule = {this.officeHourSchedule}
+				/>
+
                 <div className='center' id='body' style={{flex: 1, flexDirection: 'column'}}>
+
                     <title>Hello</title>
+<<<<<<< Updated upstream
                     <button  
                     style={{flex: 1, alignSelf: 'center'}}
                     onClick={() => {this.props.history.push('About')}}/>
+=======
+<<<<<<< Updated upstream
+                    {/* <button  
+                    style={{flex: 1, alignSelf: 'center'}}
+                    onClick={() => {}}/> */}
+=======
+
+                    <button  
+
+                    style={collapsibleContainer}
+
+                    onClick={() => {this.props.history.push('About')}}/>
+
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
                 </div>
 				
+<<<<<<< Updated upstream
 				<OfficeHours officeHourSchedule = {this.officeHourSchedule} />
 				<Sponsors sponsors = {this.sponsors} />
 				
+=======
+<<<<<<< Updated upstream
+				>
+					<table id="simple-board">
+						<tbody>
+							{rows}
+						</tbody>
+					</table>
+				</Collapsible>
+=======
+				<Sponsors
+					sponsors = {this.sponsors}
+				/>
+				
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
             </div>
         )
     }
-}
-
-const stylesheet = {
-
-    collapsibleContainer: {
-
-        backgroundColor: '#f00',
-
-        flex: 1
-
-    },
-
-    tableContainer : {
-
-
-
-    },
-
-    tableItem: {
-
-
-
-    }
-
 }
 
