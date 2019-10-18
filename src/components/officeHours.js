@@ -1,4 +1,7 @@
+import React, { Component } from 'react'
 import Collapsible from 'react-collapsible';
+import '../style/main.css'
+import '../style/components/officeHours.css'
 
 class OfficeHours extends Component {
     constructor(props) {
@@ -8,14 +11,17 @@ class OfficeHours extends Component {
         }
     }
     render() {
+		let scheduleRows = [], sponsorRows = []
+		scheduleRows = organizeSchedule(this.props.officeHourSchedule)
+		
         return (
             <div className='officeHourContainer'>
                 <Collapsible
-				trigger="Start here"
+				trigger="Office Hours"
 				className="Table-header">
-					<table id="simple-board">
+					<table id="officeHours">
 						<tbody>
-							{rows}
+							{scheduleRows}
 						</tbody>
 					</table>
 				</Collapsible>
@@ -72,3 +78,5 @@ function addToScheduleTable(organizedData, rows, currentDay){
 	}
 	return rows
 }
+
+export { OfficeHours }
