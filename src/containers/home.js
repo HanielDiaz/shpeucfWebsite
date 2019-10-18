@@ -90,10 +90,10 @@ export default class Home extends Component {
 		
 		this.sponsors = [
             {
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "JP Morgan",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/09/morgan-chase-logo-e1567700680324.png",
+                link: "https://www.jpmorgan.com/",
+                description: "JP Morgan"
             },
 			{
                 name: "Google",
@@ -102,71 +102,65 @@ export default class Home extends Component {
                 description: "Google does stuff"
             },
 			{
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "Office of Diversity and Inclusion UCF",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/02/UCF-ODI-Logo-Primary-e1565370468338.png",
+                link: "https://diversity.ucf.edu/",
+                description: "UCF Diversity and Inclusion"
             },
 			{
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "EA",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/02/25-257559_ea-logo-electronic-arts-logo-png-e1565370452978.png",
+                link: "https://www.ea.com/",
+                description: "EA"
             },
 			{
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "XEROX",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/01/Xerox-logo.png",
+                link: "https://www.xerox.com/",
+                description: "XEROX"
             },
 			{
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "Texas Instruments",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/01/Texas-Instruments-Brands-Logo-PNG-Transparent.png",
+                link: "http://www.ti.com/",
+                description: "TI"
             },
 			{
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "Facebook",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/01/FB-Wordmark-RGB-10241.png",
+                link: "https://www.facebook.com/facebook/",
+                description: "facebook"
             },
 			{
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "Harris",
+                source: "https://www.shpeucf.com/wp-content/uploads/2019/01/harris-corporation-logo.png",
+                link: "https://www.harris.com/",
+                description: "HARRIS"
             },
 			{
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "Leidos",
+                source: "https://www.shpeucf.com/wp-content/uploads/2018/09/Leidos.png",
+                link: "https://www.leidos.com/",
+                description: "leidos"
             },
 			{
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "Northrop Grumman",
+                source: "https://www.shpeucf.com/wp-content/uploads/2018/09/small_logo.png",
+                link: "http://www.northropgrumman.com/Pages/default.aspx",
+                description: "NORTHROP GRUMMAN"
             },
 			{
-                name: "Google",
-                source: "https://www.shpeucf.com/wp-content/uploads/2019/08/Google-logo-e1565828559704.png",
-                link: "https://about.google/",
-                description: "Google does stuff"
+                name: "ADP",
+                source: "https://www.shpeucf.com/wp-content/uploads/2018/09/adp-e1565760112190.png",
+                link: "https://www.adp.com/",
+                description: "ADP"
             }
 			
         ]
 	}
 	
     render() {	
-		const {
-
-            collapsibleContainer
-
-        } = stylesheet;
-
-        
+		const {collapsibleContainer} = stylesheet;
 
         return (
             <div id='page'>
@@ -186,8 +180,6 @@ export default class Home extends Component {
             </div>
         )
 				
-				
-
     }
 }
 
