@@ -1,0 +1,11 @@
+.fieldContainer {
+    margin-top: 5px;
+    flex: 1;
+    display: -webkit-flex;
+    flex-direction: row;
+}
+
+.inputContainer {
+    flex: 1;
+}
+

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Collapsible from 'react-collapsible';
-import { Header, Calendar, OfficeHours, Sponsors } from '../components'
+import { Header, Calendar, OfficeHours, Sponsors, Form } from '../components'
 import { Link } from 'react-router-dom'
 import '../style/main.css'
 
@@ -30,6 +30,24 @@ export default class Home extends Component {
                  location: "Eng 1 286",
                  description: "Come join us for our second GBM",
              },
+        ]
+
+        this.fields = [
+            {
+                name: "hello",
+                type: "textInput",
+                required: true
+            },
+            {
+                name: "hello2",
+                type: "textInput",
+                required: true
+            },
+            {
+                name: "poop",
+                type: "textInput",
+                required: false
+            }
         ]
 
 		this.officeHourSchedule = {
@@ -170,6 +188,7 @@ export default class Home extends Component {
                     title="Events"
                     events={this.events}
                 />
+                <Form fields={this.fields} saveTo={(state) => alert(JSON.stringify(state))}/>
 				<OfficeHours officeHourSchedule = {this.officeHourSchedule} />
                 <div className='center' id='body' style={{flex: 1, flexDirection: 'column'}}>
                     <title>Hello</title>
