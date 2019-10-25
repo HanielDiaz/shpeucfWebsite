@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form } from '../components'
 import { loginUser } from '../modules/User'
-import '../style/main.css'
+import '../style/components/login.css'
 import { connect } from 'react-redux'
 
 
@@ -30,8 +30,13 @@ class Login extends Component {
     
     render() {
         return (
-            <div id='page'>
-              <Form fields={this.fields} saveTo={(userCredentials) => {this.props.loginUser(userCredentials)}} />
+            <div className='loginContainer'>
+              <Form 
+              fields={this.fields}
+              submitName={"Login"}
+              saveTo={(userCredentials) => {this.props.loginUser(userCredentials)}}
+              />
+              
             </div>
         )
     }

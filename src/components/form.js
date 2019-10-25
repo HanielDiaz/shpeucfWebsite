@@ -55,7 +55,7 @@ class Form extends Component {
                 this.props.saveTo(this.state)}}
                  >
                 {this.props.fields.map((field) => this.createField(field))}
-                <input type="submit" value="Submit" />
+                <input type="submit" value={this.props.submitName} />
             </form>
         )
     }
@@ -68,7 +68,8 @@ Form.propTypes = {
         type: PropTypes.string,
         required: PropTypes.bool
     })).isRequired,
-    saveTo: PropTypes.func.isRequired
+    saveTo: PropTypes.func.isRequired,
+    submitName: PropTypes.string
 }
 
 export { Form }

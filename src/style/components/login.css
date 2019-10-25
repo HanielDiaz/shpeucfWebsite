@@ -1,0 +1,20 @@
+.loginContainer {
+    position: absolute;
+    top: -130px;
+    right: 0px;
+    height: 150px;
+    width: 300px;
+    background-color: aqua;
+    transition: top .3s ease-out;
+    -moz-transition: top .3s ease-out;
+    -o-transition: top .3s ease-out;
+    -webkit-transition: top .3s ease-out;
+}
+
+.loginContainer:hover {
+    top: 0px;
+    transition: top .3s ease-in;
+    -moz-transition: top .3s ease-in;
+    -o-transition: top .3s ease-in;
+    -webkit-transition: top .3s ease-in;
+}
