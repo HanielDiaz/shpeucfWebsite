@@ -36,7 +36,14 @@ class Form extends Component {
             case "email":
             case "password":
             case "date":
+            case "time":
                 input = <input required={required} type={type} placeholder={name} value={this.state[name]} onChange={(event) => this.changeState(name, event.target.value)} />
+            break;
+            case "select":
+                input = <select>{field.options.map(option => <option value={option}>option</option>)}</select>
+            break;
+            default:
+                console.error("Please choose a supported type.\nSupported types include: ['text','email','password','date','time','select'...]\n View more types in the form.js component");            
             break;
         }
         return (
