@@ -26,7 +26,10 @@ class Login extends Component {
     componentWillMount() {
         
     }
-
+    
+    handleSubmit(userCredentials) {
+        this.props.loginUser(userCredentials);
+    }
     
     render() {
         return (
@@ -34,7 +37,7 @@ class Login extends Component {
               <Form 
               fields={this.fields}
               submitName={"Login"}
-              saveTo={(userCredentials) => {this.props.loginUser(userCredentials)}}
+              saveTo={(userCredentials) => this.handleSubmit(userCredentials)}
               />
               
             </div>
