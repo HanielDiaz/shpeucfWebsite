@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { Login } from '../components'
 import '../style/components/header.css'
 import '../style/main.css'
 
@@ -28,6 +29,7 @@ class Header extends Component {
                             </li>
                         </ul>
                 </div>
+                <Login/>
             </div>
         )
     }

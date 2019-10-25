@@ -5,7 +5,7 @@ import '../style/components/login.css'
 import { connect } from 'react-redux'
 
 
-class Login extends Component {
+class LoginComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -39,7 +39,7 @@ class Login extends Component {
               submitName={"Login"}
               saveTo={(userCredentials) => this.handleSubmit(userCredentials)}
               />
-              
+              <h1>Hover over me</h1>
             </div>
         )
     }
@@ -49,5 +49,5 @@ const mapDispatchToProps = {
     loginUser
 }
 
-
-export default connect(null,mapDispatchToProps)(Login)
+let Login = connect(null, mapDispatchToProps)(LoginComponent)
+export { Login }

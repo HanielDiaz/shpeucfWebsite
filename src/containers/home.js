@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Header } from '../components'
-import Login from '../components/login'
 // import { Link } from 'react-router-dom'
 import '../style/main.css'
 
@@ -56,7 +55,6 @@ export default class Home extends Component {
         return (
             <div id='page'>
                 <Header/>
-                <Login />
                 <div className='center' id='body' style={{flex: 1, flexDirection: 'column'}}>
                     <title>Hello</title>
                     <button  
