@@ -16,8 +16,8 @@ class OfficeHours extends Component {
 		
         return (
             <div className='officeHours' id='officeHours'>
-				<h1> Office Hours </h1>
-				<h3> {this.props.officeHourSchedule.room} </h3>
+				<h1 id="officeHours"> Office Hours </h1>
+				<h3 id="officeHours"> {this.props.officeHourSchedule.room} </h3>
 					<table id="officeHours">
 						<tbody>
 							{scheduleRows}
@@ -63,14 +63,14 @@ function addToScheduleTable(organizedData, rows, currentDay){
 		cell.push( <td align='left'> {organizedData[z].name} </td>)
 		for(i = 0; i < organizedData[z].time.length; i++){
 			if(i > 0){
-				rows.push(<tr> {cell} </tr>)
+				rows.push(<tr id="officeHours"> {cell} </tr>)
 				cell = []
 				cell.push(<td></td>)
 				cell.push(<td></td>)
 			}
 			cell.push( <td align='right'> {organizedData[z].time[i]} </td>)
 		}
-		rows.push(<tr> {cell} </tr>)
+		rows.push(<tr id="officeHours"> {cell} </tr>)
 		cell = []
 		cell.push(<td></td>)
 	}

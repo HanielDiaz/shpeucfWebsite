@@ -1,8 +1,17 @@
 table#officeHours {
-	width: 100%;
+	width: 80%;
+	margin: auto;
 }
 
-th, td#officeHours {
+h1#officeHours {
+	text-align: center;
+}
+
+h3#officeHours {
+	text-align: center;
+}
+
+th, td{
   padding: 15px;
 }
 
