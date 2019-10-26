@@ -4,3 +4,4 @@ export * from './calendar';
 export * from './form';
 export * from './officeHours';
 export * from './sponsors';
+export * from './bodyLayout';
