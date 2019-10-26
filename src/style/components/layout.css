@@ -24,35 +24,6 @@ h3 {
 	margin: 0;
 }
 
-div#header {
-	position: relative;
-}
-
-div#header h1 {
-	height: 80px;
-	line-height: 80px;
-	margin: 0;
-	padding-left: 10px;
-	background: #e0e0e0;
-	color: #292929;
-}
-
-div#header a {
-	position: absolute;
-	right: 0;
-	top: 23px;
-	padding: 10px;
-	color: #006;
-}
-
-div#navigation {
-	background: #7cb71c;
-}
-
-div#navigation li {
-	list-style: none;
-}
-
 div#hours {
 	width: 100%;
 	padding: 0px 50px;
@@ -65,6 +36,7 @@ div#container {
 }
 
 div#motto {
+	text-align: center;
 	width: 100%;
 }
 
