@@ -1,9 +1,9 @@
-table {
+table#officeHours {
 	width: 100%;
 }
 
-th, td {
+th, td#officeHours {
   padding: 15px;
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr#officeHours:nth-child(even) {background-color: #f2f2f2;}

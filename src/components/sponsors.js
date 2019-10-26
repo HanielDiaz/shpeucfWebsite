@@ -34,7 +34,7 @@ function createSponsors(sponsors){
 		}
 		cell.push(<td align='center'>
 				<a href={sponsors[i].link}> <img src={sponsors[i].source} onmouseover={sponsors[i].description} 
-				style = {{maxWidth: width, height:"auto", maxHeight: "100px", width: "auto"}}/></a>
+				style = {{maxWidth: width, height:"auto", maxHeight: "125px", width: "auto"}}/></a>
 			</td>)
 	}
 	row.push(<tr> {cell} </tr>)

@@ -15,16 +15,14 @@ class OfficeHours extends Component {
 		scheduleRows = organizeSchedule(this.props.officeHourSchedule)
 		
         return (
-            <div className='officeHourContainer'>
-                <Collapsible
-				trigger="Office Hours"
-				className="Table-header">
+            <div className='officeHours' id='officeHours'>
+				<h1> Office Hours </h1>
+				<h3> {this.props.officeHourSchedule.room} </h3>
 					<table id="officeHours">
 						<tbody>
 							{scheduleRows}
 						</tbody>
 					</table>
-				</Collapsible>
             </div>
         )
     }

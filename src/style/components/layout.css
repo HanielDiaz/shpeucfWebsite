@@ -1,0 +1,80 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #292929;
+	font: 90% Roboto, Arial, sans-serif;
+	font-weight: 300;
+}
+
+p {
+	padding: 0 10px;
+	line-height: 1.8;
+}
+
+ul li {
+	padding-right: 10px;
+	line-height: 1.6;
+}
+
+h3 {
+	padding: 5px 20px;
+	margin: 0;
+}
+
+div#header {
+	position: relative;
+}
+
+div#header h1 {
+	height: 80px;
+	line-height: 80px;
+	margin: 0;
+	padding-left: 10px;
+	background: #e0e0e0;
+	color: #292929;
+}
+
+div#header a {
+	position: absolute;
+	right: 0;
+	top: 23px;
+	padding: 10px;
+	color: #006;
+}
+
+div#navigation {
+	background: #7cb71c;
+}
+
+div#navigation li {
+	list-style: none;
+}
+
+div#hours {
+	width: 100%;
+	padding: 0px 50px;
+	clear: both;
+}
+
+div#container {
+	width: 70%;
+	margin: 0 auto;
+}
+
+div#motto {
+	width: 100%;
+}
+
+div#events {
+	width: 100%;
+}
+
+div#sponsors {
+	clear: both;
+	width: 100%;
+	
+	padding: 50px 10px;
+}
