@@ -5,6 +5,10 @@ import { Header, Calendar, Sponsors, OfficeHours } from '../components'
 import '../style/main.css'
 import '../style/components/layout.css'
 
+//const bg = 'https://www.shpeucf.com/wp-content/uploads/2019/08/IMG_6296_1-1-e1565773790331.jpg'
+const motto = (Math.floor(Math.random() * 100) % 2 === 0) ? 'Working with a group of strangers can be terrifying. SHPE is here to tear down walls and build up friendships. We welcome you to a little something we call "familia".' :
+                                                            'It is hard to have the competitive advantage in STEM without being left behind. Your SHPE "familia" keeps you included. We provide the development opportunities that will keep your future bright.'
+
 class BodyLayout extends Component {
     constructor(props) {
         super(props);
@@ -14,18 +18,19 @@ class BodyLayout extends Component {
 		
 		this.events =  [
             {
-                name: "Hello",
-                date: "2019-08-28",
-                time: "Now",
+                name: "Club Meeting",
+                date: "2019-10-28",
+                time: "8:30PM",
+                eventActive: true,
                 id: "1",
                 committee: "Hello",
-                location: "here",
+                location: "EGN2 102",
                 description: "no",
             },
             {
-                name: "GBM",
+                name: "General Body Meeting",
                 date: "2019-08-29",
-                time: "Now",
+                time: "HEC 101",
                 id: "1"
             },
         ]
@@ -159,9 +164,9 @@ class BodyLayout extends Component {
 
     render() {
         return (
-            <div id="wrapper">
+            <div id="wrapper" style={{backgroundColor: '#eeeeee'}}>
 					<div id="motto">
-						<p>Motto</p>
+						<p style={{fontStyle: 'italic'}}>{motto}</p>
 					</div>
 				<div id="events">
 					<Calendar 
@@ -169,7 +174,15 @@ class BodyLayout extends Component {
                     events={this.events}
 					/>
 				</div>
-				<div id="hours">
+				<div id="hours" style={{
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    flex: 1,
+                    backgroundColor: '#F0D03B',
+                    flexDirection: 'row',
+                    paddingLeft: 5,
+                    paddingRight: 5}}
+                >
 					<OfficeHours officeHourSchedule = {this.officeHourSchedule} />
 				</div>
 				<div id="sponsors">
@@ -180,5 +193,6 @@ class BodyLayout extends Component {
         )
     }
 }
+
 
 export { BodyLayout }

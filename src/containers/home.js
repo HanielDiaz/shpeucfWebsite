@@ -9,8 +9,7 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            color: '#fff',
-            header: 'title'
+            
         }
 		
     }
@@ -19,6 +18,7 @@ export default class Home extends Component {
 
         return (
             <div id="container">
+                <h1>SHPE UCF</h1>
 				<Header/>
 				<BodyLayout/>
 			</div>

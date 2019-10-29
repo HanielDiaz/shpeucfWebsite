@@ -9,6 +9,7 @@ class Calendar extends Component {
         super(props);
         this.state = {
             selectedEvent: -1,
+            txtColor: '#000'
         }
         this.months = {
             "Jan": 0,
@@ -25,7 +26,6 @@ class Calendar extends Component {
             "Dec": 11
         }
     }
-    
 
     componentWillMount() {
         
@@ -42,7 +42,7 @@ class Calendar extends Component {
             time,
         } = event;
         
-        let active = (eventActive) ? {backgroundColor: '#FFC200'} : {backgroundColor: '#fff'}
+        let active = (eventActive) ? {backgroundColor: '#00009b', color: '#fff'} : {backgroundColor: '#fff', color: '#000'}
         return (
             <div key={name} className='container' style={active}
             onMouseEnter={() => {
@@ -56,9 +56,9 @@ class Calendar extends Component {
                     <h2>{date.day}</h2>
                     <span>{date.month}, {date.year}</span>
                 </div>
-                <div className = 'info unselectable' >
+                <div className = 'info unselectable'>
                     <div className='eventData'>
-                        <h3 >{name}</h3>
+                        <h3>{name}</h3>
                         <p>Name: {name}</p>
                         <p>time: {time}</p>
                         <p>Location: {location}</p>
@@ -147,10 +147,12 @@ Calendar.propTypes = {
 
 const Styles = {
     container: {
+        marginLeft: "auto",
+        marginRight: "auto",
         flex: 1,
-        backgroundColor: '#024FD19a',
-        width: 500,
-        height: 300,
+        backgroundColor: '#F0D03B',
+        width: 950,
+        height: 250,
         flexDirection: 'row',
         paddingLeft: 5,
         paddingRight: 5,

@@ -36,10 +36,10 @@ class LoginComponent extends Component {
             <div className='loginContainer'>
               <Form 
               fields={this.fields}
-              submitName={"Login"}
+              submitName={"Submit"}
               saveTo={(userCredentials) => this.handleSubmit(userCredentials)}
               />
-              <h1>Hover over me</h1>
+              <h1>Login</h1>
             </div>
         )
     }

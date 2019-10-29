@@ -44,12 +44,15 @@ function createSponsors(sponsors){
 const Styles = {
     container: {
         flex: 1,
-        backgroundColor: '#024FD19a',
+		backgroundColor: '#f0d03b',
+		//'#024FD19a',
         width: 500,
         height: 300,
         flexDirection: 'row',
         paddingLeft: 5,
-        paddingRight: 5,
+		paddingRight: 5,
+		marginLeft: 'auto',
+		marginRight: 'auto'
     }
 }
 
