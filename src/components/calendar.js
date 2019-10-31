@@ -152,7 +152,7 @@ const Styles = {
         flex: 1,
         backgroundColor: '#F0D03B',
         width: 950,
-        height: 250,
+        height: 350,
         flexDirection: 'row',
         paddingLeft: 5,
         paddingRight: 5,

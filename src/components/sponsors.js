@@ -22,13 +22,13 @@ class Sponsors extends Component {
 }
 
 function createSponsors(sponsors){
-	let i=0, length = 6
+	let i=0, length = 5
 	let width = (window.innerWidth/10) + "px"
 	console.log("This width:" + width);
 	let cell = []
 	let row = []
 	for(i=0; i<sponsors.length; i++){
-		if(i==length){
+		if(i%length==0){
 			row.push(<tr> {cell} </tr>)
 			cell = []
 		}

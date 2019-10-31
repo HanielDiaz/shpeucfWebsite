@@ -28,6 +28,7 @@ div#hours {
 	width: 100%;
 	padding: 0px 50px;
 	clear: both;
+	margin: auto auto;
 }
 
 div#container {
@@ -42,7 +43,7 @@ div#motto {
 
 div#events {
 	width: 100%;
-	margin:auto;
+	margin:auto auto;
 }
 
 div#sponsors {

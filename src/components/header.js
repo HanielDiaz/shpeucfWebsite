@@ -22,10 +22,10 @@ class Header extends Component {
                 <div className=''>
                         <ul className='list'>
                             <li className='listElement'>
-                                <Link to="./About">About</Link>
+                                <Link to="./About" style={{color: '#fff'}}>About</Link>
                             </li>
                             <li className='listElement'>
-                                <Link to="/">Home</Link>
+                                <Link to="/" style={{color: '#fff'}}>Home</Link>
                             </li>
                         </ul>
                 </div>

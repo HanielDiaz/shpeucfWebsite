@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+//import { connect } from 'react-redux'
 import { Header, BodyLayout } from '../components'
 // import { Link } from 'react-router-dom'
 import '../style/main.css'
@@ -16,7 +16,7 @@ export default class Home extends Component {
 
     render() {
 
-        return (
+        return(
             <div id="container">
                 <h1>SHPE UCF</h1>
 				<Header/>

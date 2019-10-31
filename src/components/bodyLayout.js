@@ -5,9 +5,10 @@ import { Header, Calendar, Sponsors, OfficeHours } from '../components'
 import '../style/main.css'
 import '../style/components/layout.css'
 
-//const bg = 'https://www.shpeucf.com/wp-content/uploads/2019/08/IMG_6296_1-1-e1565773790331.jpg'
-const motto = (Math.floor(Math.random() * 100) % 2 === 0) ? 'Working with a group of strangers can be terrifying. SHPE is here to tear down walls and build up friendships. We welcome you to a little something we call "familia".' :
-                                                            'It is hard to have the competitive advantage in STEM without being left behind. Your SHPE "familia" keeps you included. We provide the development opportunities that will keep your future bright.'
+const bg = 'https://www.shpeucf.com/wp-content/uploads/2019/08/IMG_6296_1-1-e1565773790331.jpg'
+const motto = (Math.floor(Math.random() * 100) % 2 === 0) ?
+              'Working with a group of strangers can be terrifying. SHPE is here to tear down walls and build up friendships. We welcome you to a little something we call "familia".' :
+              'It is hard to have the competitive advantage in STEM without being left behind. Your SHPE "familia" keeps you included. We provide the development opportunities that will keep your future bright.'
 
 class BodyLayout extends Component {
     constructor(props) {
@@ -170,22 +171,29 @@ class BodyLayout extends Component {
 					</div>
 				<div id="events">
 					<Calendar 
-                    title="Events"
+                    title="Upcoming Events"
                     events={this.events}
 					/>
 				</div>
 				<div id="hours" style={{
-                    marginLeft: "auto",
-                    marginRight: "auto",
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
                     flex: 1,
-                    backgroundColor: '#F0D03B',
+                    backgroundColor: '#f0d03b',
                     flexDirection: 'row',
                     paddingLeft: 5,
                     paddingRight: 5}}
                 >
 					<OfficeHours officeHourSchedule = {this.officeHourSchedule} />
 				</div>
-				<div id="sponsors">
+				<div id="sponsors" style={{
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    flex: 1,
+                    backgroundColor: '#F0D03B',
+                    align: 'center'
+                }}
+                >
 					<hr />
 					<Sponsors sponsors = {this.sponsors} />
 				</div>
