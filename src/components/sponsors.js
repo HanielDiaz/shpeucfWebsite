@@ -44,8 +44,8 @@ function createSponsors(sponsors){
 const Styles = {
     container: {
         flex: 1,
-		backgroundColor: '#f0d03b',
-		//'#024FD19a',
+		//backgroundColor: '#f0d03b',
+		backgroundColor: '#000',
         width: 500,
         height: 300,
         flexDirection: 'row',

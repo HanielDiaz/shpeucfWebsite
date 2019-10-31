@@ -117,7 +117,7 @@ class Calendar extends Component {
 
         return (
             <div style={container}>
-                <h2 style={{alignSelf: 'center'}}>{title}</h2>
+                <h3 style={{textAlign: 'center'}}>{title}</h3>
                {formattedEvents.map((event, index) => this.renderItemOne(event, index))}
             </div>
         )
@@ -151,7 +151,7 @@ const Styles = {
         marginRight: "auto",
         flex: 1,
         backgroundColor: '#F0D03B',
-        width: 950,
+        width: 'auto',
         height: 350,
         flexDirection: 'row',
         paddingLeft: 5,

@@ -44,6 +44,8 @@ div#motto {
 div#events {
 	width: 100%;
 	margin:auto auto;
+	clear: both;
+	padding: 0px 0px;
 }
 
 div#sponsors {

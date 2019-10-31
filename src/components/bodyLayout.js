@@ -186,11 +186,13 @@ class BodyLayout extends Component {
                 >
 					<OfficeHours officeHourSchedule = {this.officeHourSchedule} />
 				</div>
+                <h2 style={{textAlign:'center'}}>Sponsors</h2>
 				<div id="sponsors" style={{
                     marginLeft: 'auto',
                     marginRight: 'auto',
                     flex: 1,
-                    backgroundColor: '#F0D03B',
+                    //backgroundColor: '#F0D03B',
+                    backgroundColor: '#fff',
                     align: 'center'
                 }}
                 >
