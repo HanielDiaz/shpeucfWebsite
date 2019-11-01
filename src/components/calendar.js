@@ -42,7 +42,7 @@ class Calendar extends Component {
             time,
         } = event;
         
-        let active = (eventActive) ? {backgroundColor: '#00009b', color: '#fff'} : {backgroundColor: '#fff', color: '#000'}
+        let active = (eventActive) ? {backgroundColor: '#f0d03b'} : {backgroundColor: '#fff'}
         return (
             <div key={name} className='container' style={active}
             onMouseEnter={() => {
@@ -150,7 +150,7 @@ const Styles = {
         marginLeft: "auto",
         marginRight: "auto",
         flex: 1,
-        backgroundColor: '#F0D03B',
+        backgroundColor: '#fff',
         width: 'auto',
         height: 350,
         flexDirection: 'row',

@@ -165,7 +165,7 @@ class BodyLayout extends Component {
 
     render() {
         return (
-            <div id="wrapper" style={{backgroundColor: '#eeeeee'}}>
+            <div id="wrapper" style={{backgroundColor: '#f0d03b'}}>
 					<div id="motto">
 						<p style={{fontStyle: 'italic'}}>{motto}</p>
 					</div>
@@ -179,7 +179,7 @@ class BodyLayout extends Component {
                     marginLeft: 'auto',
                     marginRight: 'auto',
                     flex: 1,
-                    backgroundColor: '#f0d03b',
+                    backgroundColor: '#fff',
                     flexDirection: 'row',
                     paddingLeft: 5,
                     paddingRight: 5}}

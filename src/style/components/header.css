@@ -1,6 +1,11 @@
 .containerGeneral {
     flex: 1;
     height: 60;
+    display: flexbox;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: -webkit-flex;
     flex-direction: row;
     background-color: black;
 }
@@ -11,6 +16,11 @@
 
 .list {
     flex: 1;
+    display: flexbox;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: -webkit-flex;
     flex-direction: row;
 }
 

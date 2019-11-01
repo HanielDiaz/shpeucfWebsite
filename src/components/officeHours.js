@@ -44,7 +44,7 @@ function organizeSchedule(officeHourSchedule){
 		x++
 		if(x >= officeHourSchedule.dates.length){ //all data has been cycled, array of currentDay is complete
 			x = 0 //reset dates counter
-			rows = addToScheduleTable(organizedData, rows, currentDay) //update table
+			rows = addToScheduleTable(organizedData, rows, currentDay, (y % 2 === 0)) //update table
 			y++ //iterate current day
 			if(y < officeHourSchedule.days.length){ //make sure y doesn't go over the number of days
 				currentDay = officeHourSchedule.days[y] //set current day
@@ -55,22 +55,24 @@ function organizeSchedule(officeHourSchedule){
 	return rows
 }
 
-function addToScheduleTable(organizedData, rows, currentDay){
+function addToScheduleTable(organizedData, rows, currentDay, highlighted){
 	let cell = []
 	let i = 0, z=0
-	cell.push(<td> {currentDay} </td>) //day.charAt(0).toUpperCase() + day.slice(1).toLowerCase()
+	let highlight = (highlighted) ? "highlight" : "";
+	
+	cell.push(<td className="day"> {currentDay} </td>) //day.charAt(0).toUpperCase() + day.slice(1).toLowerCase()
 	for(z = 0; z < organizedData.length; z++){
 		cell.push( <td align='left'> {organizedData[z].name} </td>)
 		for(i = 0; i < organizedData[z].time.length; i++){
 			if(i > 0){
-				rows.push(<tr id="officeHours"> {cell} </tr>)
+				rows.push(<tr className={highlight} id="officeHours"> {cell} </tr>)
 				cell = []
 				cell.push(<td></td>)
 				cell.push(<td></td>)
 			}
 			cell.push( <td align='right'> {organizedData[z].time[i]} </td>)
 		}
-		rows.push(<tr id="officeHours"> {cell} </tr>)
+		rows.push(<tr className={highlight} id="officeHours"> {cell} </tr>)
 		cell = []
 		cell.push(<td></td>)
 	}

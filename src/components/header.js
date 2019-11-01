@@ -18,8 +18,8 @@ class Header extends Component {
 
     render() {
         return (
-            <div className='containerGeneral'>
-                <div className=''>
+            <div className=''>
+                <div className='containerGeneral'>
                         <ul className='list'>
                             <li className='listElement'>
                                 <Link to="./About" style={{color: '#fff'}}>About</Link>
@@ -28,6 +28,8 @@ class Header extends Component {
                                 <Link to="/" style={{color: '#fff'}}>Home</Link>
                             </li>
                         </ul>
+                        <div style={{flex:.5}}/>
+
                 </div>
                 <Login/>
             </div>

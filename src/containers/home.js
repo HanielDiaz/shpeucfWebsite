@@ -23,7 +23,6 @@ export default class Home extends Component {
                           backgroundSize:'75% auto',
                           backgroundRepeat: 'repeat'}}>
                 <div id="container">
-                    <h1 style={{textAlign:'center', backgroundColor:'#ccc'}}>SHPE UCF</h1>
 				    <Header/>
 				    <BodyLayout/>
 			    </div>

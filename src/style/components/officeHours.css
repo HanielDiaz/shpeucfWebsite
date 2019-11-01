@@ -1,3 +1,8 @@
+.day {
+	font-weight: bold;
+}
+
+
 table#officeHours {
 	width: 80%;
 	margin: auto;
@@ -11,8 +16,12 @@ h3#officeHours {
 	text-align: center;
 }
 
+tr#officeHours.highlight {
+	background-color: #f2f2f2
+}
+
 th, td{
   padding: 15px;
 }
 
-tr#officeHours:nth-child(even) {background-color: #f2f2f2;}
+

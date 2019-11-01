@@ -1,11 +1,14 @@
 .loginContainer {
-    position: absolute;
+    position: fixed;
     top: -100px;
     right: 0px;
     height: 150px;
     width: 300px;
     color: black;
-    background-color: #f0d03b;
+    background-color: #fff;
+    /*
+        border, round edge, padding
+    */
     transition: top .3s ease-out;
     -moz-transition: top .3s ease-out;
     -o-transition: top .3s ease-out;
