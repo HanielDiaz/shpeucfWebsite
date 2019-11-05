@@ -26,35 +26,31 @@ export default class Home extends Component {
     render() {
         console.log(events)
         return(
-            <body style={{backgroundImage:"url(" + bg + ")",
-                          backgroundPosition:'origin',
-                          backgroundSize:'75% auto',
-                          backgroundRepeat: 'repeat'}}>
+            <body>
                 <div id="container">
 				    <Header/>
 				    <div id="wrapper" style={{backgroundColor: '#f0d03b'}}>
-					<div id="motto">
-						<p style={{fontStyle: 'italic'}}>{this.motto}</p>
-					</div>
-					<Calendar 
-                    title="Upcoming Events"
-                    events={events}
-					/>
-				<div id="hours" style={{
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    flex: 1,
-                    backgroundColor: '#fff',
-                    flexDirection: 'row',
-                    paddingLeft: 5,
-                    paddingRight: 5}}
-                >
-					<OfficeHours officeHourSchedule={officeHourSchedule} />
-				</div>
-                <h2 style={{textAlign:'center'}}>Sponsors</h2>
-                <hr />
-                <Sponsors sponsors={sponsors} />
-			</div>
+                        <div id="motto">
+                            <p style={{fontStyle: 'italic'}}>{this.motto}</p>
+                        </div>
+                        <Calendar 
+                        title="Upcoming Events"
+                        events={events}
+                        />
+                        <div id="hours" style={{
+                            flex: 1,
+                            backgroundColor: '#fff',
+                            flexDirection: 'row',
+                            paddingLeft: 5,
+                            paddingRight:5
+                        }}
+                        >
+                            <OfficeHours officeHourSchedule={officeHourSchedule} />
+                        </div>
+                        <h2 style={{textAlign:'center'}}>Sponsors</h2>
+                        <hr />
+                        <Sponsors sponsors={sponsors} />
+                    </div>
 			    </div>
             </body>
         )
