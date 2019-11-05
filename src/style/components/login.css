@@ -1,14 +1,18 @@
 .loginContainer {
     position: fixed;
-    top: -100px;
+    top: -160px;
     right: 0px;
-    height: 150px;
-    width: 300px;
-    color: black;
+    height: 220px;
+    width: 200px;
+    border-bottom-left-radius: 10px;
+    color: white;
     background-color: #fff;
-    /*
-        border, round edge, padding
-    */
+    display: flexbox;
+    padding: 20px;
+    background-color: #0008;
+    border-bottom: 3px double #f0d03b;
+    border-left: 3px double #f0d03b;
+
     transition: top .3s ease-out;
     -moz-transition: top .3s ease-out;
     -o-transition: top .3s ease-out;
