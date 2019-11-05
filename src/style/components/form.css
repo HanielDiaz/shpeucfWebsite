@@ -9,3 +9,109 @@
     flex: 1;
 }
 
+.general {
+    max-width: 150px;
+    padding: 8px;
+    margin-top: 5px;
+    background: #f4f7f8;
+    justify-self: center;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.general fieldset {
+    border: none;
+}
+
+.general legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.general label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.general input[type="text"],
+.general input[type="date"],
+.general input[type="datetime"],
+.general input[type="email"],
+.general input[type="number"],
+.general input[type="search"],
+.general input[type="time"],
+.general input[type="url"],
+.general textarea,
+.general select {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 0;
+    outline: 0;
+    padding: 1px;
+    width: 80%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 3px;
+}
+
+.general input[type="text"]:focus,
+.general input[type="date"]:focus,
+.general input[type="datetime"]:focus,
+.general input[type="email"]:focus,
+.general input[type="number"]:focus,
+.general input[type="search"]:focus,
+.general input[type="time"]:focus,
+.general input[type="url"]:focus,
+.general textarea:focus,
+.general select:focus {
+    background: #d2d9dd;
+}
+
+.general select {
+    -webkit-appearance: menulist-button;
+    height: 35px;
+}
+
+.general .number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.general input[type="submit"],
+.general input[type="button"] {
+    position: relative;
+    display: block;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+
+.general input[type="submit"]:hover,
+.general input[type="button"]:hover {
+    background: #109177;
+}
+
