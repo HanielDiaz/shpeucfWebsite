@@ -10,6 +10,16 @@ class Header extends Component {
         this.state = {
             
         }
+        this.pages = [
+        {
+            text: "Home",
+            link: ""
+        },
+        {
+            text: "About",
+            link: "About"
+        },
+        ]
     }
 
     componentWillMount() {
@@ -18,18 +28,16 @@ class Header extends Component {
 
     render() {
         return (
-            <div className=''>
+            <div className='containerGeneral'>
                 <div className='containerGeneral'>
-                        <ul className='list'>
-                            <li className='listElement'>
-                                <Link to="./About" style={{color: '#fff'}}>About</Link>
-                            </li>
-                            <li className='listElement'>
-                                <Link to="/" style={{color: '#fff'}}>Home</Link>
-                            </li>
+                        <ul
+                        className="list"
+                        open={false}
+                        >
+                            {this.pages.map(({text, link}) => (
+                                <Link className="listElement" to={`./${link}`}>{text}</Link>
+                            ))}
                         </ul>
-                        <div style={{flex:.5}}/>
-
                 </div>
                 <Login/>
             </div>

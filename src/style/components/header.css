@@ -1,13 +1,13 @@
 .containerGeneral {
     flex: 1;
-    height: 60;
+    height: 75px;
     display: flexbox;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -moz-box;
     display: -webkit-flex;
     flex-direction: row;
-    background-color: black;
+    background-color: #000;
 }
 
 .element {
@@ -25,9 +25,13 @@
 }
 
 .listElement {
-     flex: 1;
-     flex-direction: row;
-     color: blue;
+    flex: 1;
+    padding: 5px;
+    font-size: 30px;
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f0d03b;
 }
 
 .menu {
