@@ -1,0 +1,55 @@
+{
+    "room": "ENG1 ROOM 140",
+    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "dates": [{
+            "day": "Monday",
+            "name": "Jaime",
+            "time": ["11AM - 12PM"]
+        },
+        {
+            "day": "Monday",
+            "name": "Karen",
+            "time": ["2PM - 3PM"]
+        },
+        {
+            "day": "Tuesday",
+            "name": "Emiliano",
+            "time": ["3PM - 5PM"]
+        },
+        {
+            "day": "Wednesday",
+            "name": "Jaime",
+            "time": ["11AM - 12PM"]
+        },
+        {
+            "day": "Wednesday",
+            "name": "Tomas",
+            "time": ["12PM - 1PM"]
+        },
+        {
+            "day": "Wednesday",
+            "name": "Karen",
+            "time": ["3PM - 4PM"]
+        },
+        {
+            "day": "Thursday",
+            "name": "Richard",
+            "time": ["1PM - 2PM"]
+        },
+        {
+            "day": "Thursday",
+            "name": "Tomas",
+            "time": ["3PM - 4PM"]
+        },
+        {
+            "day": "Thursday",
+            "name": "Emiliano",
+            "time": ["3PM - 4PM", "4PM - 5PM"]
+        },
+        {
+            "day": "Friday",
+            "name": "Karen",
+            "time": ["3PM - 4PM"]
+        }
+    ]
+}
