@@ -37,16 +37,7 @@ export default class Home extends Component {
                         title="Upcoming Events"
                         events={events}
                         />
-                        <div id="hours" style={{
-                            flex: 1,
-                            backgroundColor: '#fff',
-                            flexDirection: 'row',
-                            paddingLeft: 5,
-                            paddingRight:5
-                        }}
-                        >
-                            <OfficeHours officeHourSchedule={officeHourSchedule} />
-                        </div>
+                        <OfficeHours officeHourSchedule={officeHourSchedule} />
                         <h2 style={{textAlign:'center'}}>Sponsors</h2>
                         <hr />
                         <Sponsors sponsors={sponsors} />

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { convertNumToDate, distance } from '../utils';
 import '../style/components/calendar.css';
-import '../style/main.css';
 
 class Calendar extends Component {
     constructor(props) {
@@ -59,7 +58,6 @@ class Calendar extends Component {
                 <div className = 'info unselectable'>
                     <div className='eventData'>
                         <h3>{name}</h3>
-                        <p>Name: {name}</p>
                         <p>time: {time}</p>
                         <p>Location: {location}</p>
                         <p>points: {points}</p>

@@ -73,7 +73,8 @@ h2 {
 }
 
 h3 {
-    flex: 1;
+    border: 0px;
+    font-size: 20px;
     padding: 0px;
     margin: 0px;
 }
