@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 //import { connect } from 'react-redux'
-import { Header, BodyLayout } from '../components'
+import { Header, BodyLayout, Calendar, OfficeHours, Sponsors } from '../components'
 // import { Link } from 'react-router-dom'
 import '../style/main.css'
 import '../style/components/layout.css'
-import bg from '../stuff/bg_image.jpg' 
+import officeHourSchedule from '../data/OfficeHours'
+import sponsors from '../data/Sponsors'
+import events from '../data/Events'
+import bg from '../assets/bg_image.jpg' 
 
 export default class Home extends Component {
     constructor(props) {
@@ -12,11 +15,16 @@ export default class Home extends Component {
         this.state = {
             
         }
+
+        this.motto = (Math.floor(Math.random() * 100) > 5) ?
+            'Working with a group of strangers can be terrifying. SHPE is here to tear down walls and build up friendships. We welcome you to a little something we call "familia".' :
+            'It is hard to have the competitive advantage in STEM without being left behind. Your SHPE "familia" keeps you included. We provide the development opportunities that will keep your future bright.'
+
 		
     }
 
     render() {
-
+        console.log(events)
         return(
             <body style={{backgroundImage:"url(" + bg + ")",
                           backgroundPosition:'origin',
@@ -24,7 +32,29 @@ export default class Home extends Component {
                           backgroundRepeat: 'repeat'}}>
                 <div id="container">
 				    <Header/>
-				    <BodyLayout/>
+				    <div id="wrapper" style={{backgroundColor: '#f0d03b'}}>
+					<div id="motto">
+						<p style={{fontStyle: 'italic'}}>{this.motto}</p>
+					</div>
+					<Calendar 
+                    title="Upcoming Events"
+                    events={events}
+					/>
+				<div id="hours" style={{
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    flex: 1,
+                    backgroundColor: '#fff',
+                    flexDirection: 'row',
+                    paddingLeft: 5,
+                    paddingRight: 5}}
+                >
+					<OfficeHours officeHourSchedule={officeHourSchedule} />
+				</div>
+                <h2 style={{textAlign:'center'}}>Sponsors</h2>
+                <hr />
+                <Sponsors sponsors={sponsors} />
+			</div>
 			    </div>
             </body>
         )
