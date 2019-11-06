@@ -93,7 +93,7 @@ class Calendar extends Component {
         if (this.state.events.length - index > this.props.numOfEvents) return null;
 
         
-        let active = (eventActive) ? {backgroundColor: '#f0d03b'} : {backgroundColor: '#fff'}
+        let active = (eventActive) ? {backgroundColor: '#fff'} : {backgroundColor: '#fff'}
         let clickedContainer = (selectedEvent === index) ? "container containerOnClick" : "container";
         return (
             <div key={name+date+time} className={clickedContainer} style={active}
