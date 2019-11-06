@@ -15,12 +15,20 @@
     -webkit-transition: height .3s ease-out;
 }
 
-.container:hover {
-    height: 150px;
+.containerOnClick {
+    height: 118px;
     transition: height .3s ease-in;
     -moz-transition: height .3s ease-in;
     -o-transition: height .3s ease-in;
     -webkit-transition: height .3s ease-in;
+}
+
+.calendarContainer {
+     flex: 1;
+     overflow: hidden;
+     background-color: #fff;
+     height: 400px;
+     margin: auto;
 }
 
 .meetingTitle {
@@ -43,7 +51,7 @@
     -webkit-transition: padding-top .3s ease-in;
 }
 
-.container:hover .description{
+.containerOnClick .description {
     padding-top: 2px;
     transition: padding-top .3s ease-in;
     -moz-transition: padding-top .3s ease-in;

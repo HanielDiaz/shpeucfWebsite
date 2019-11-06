@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-//import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { Header, BodyLayout, Calendar, OfficeHours, Sponsors } from '../components'
+import {
+    fetchEvents
+} from '../modules'
 // import { Link } from 'react-router-dom'
 import '../style/main.css'
 import '../style/components/layout.css'
@@ -9,7 +12,7 @@ import sponsors from '../data/Sponsors'
 import events from '../data/Events'
 import bg from '../assets/bg_image.jpg' 
 
-export default class Home extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,8 +26,14 @@ export default class Home extends Component {
 		
     }
 
+    componentDidMount() {
+        this.props.fetchEvents()
+    }
+
     render() {
-        console.log(events)
+        let eventList;
+        if(this.props.eventList)
+            eventList = Object.values(this.props.eventList);
         return(
             <body>
                 <div id="container">
@@ -34,8 +43,9 @@ export default class Home extends Component {
                             <p style={{fontStyle: 'italic'}}>{this.motto}</p>
                         </div>
                         <Calendar 
+                        numOfEvents={4}
                         title="Upcoming Events"
-                        events={events}
+                        events={eventList}
                         />
                         <OfficeHours officeHourSchedule={officeHourSchedule} />
                         <h2 style={{textAlign:'center'}}>Sponsors</h2>
@@ -60,3 +70,13 @@ const stylesheet = {
 
     }
 }
+
+const mapStateToProps = (state) => ({
+    eventList: state.events.eventList
+})
+
+const mapDispatchToProps = {
+    fetchEvents
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

@@ -7,6 +7,7 @@ class Calendar extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            events: [],
             selectedEvent: -1,
             txtColor: '#000'
         }
@@ -26,6 +27,50 @@ class Calendar extends Component {
         }
     }
 
+    componentWillReceiveProps(props) {
+        const {
+            events
+        } = props;
+        let formattedEvents = new Array();
+        console.log(events)
+        if (events && events[0] && events[0].date !== Object(events[0].date)) {
+            events.map((item, index) => {
+                formattedEvents.push(Object.assign({}, item));
+                let date = convertNumToDate(formattedEvents[index].date)
+                formattedEvents[index].date = {};
+                formattedEvents[index].date.day = date.day;
+                formattedEvents[index].date.month = date.month;
+                formattedEvents[index].date.year = date.year;
+            })
+        }
+
+        formattedEvents.sort((a,b) => {
+            const {
+                year: yearA,
+                month: monthA,
+                day: dayA
+            } = a.date;
+
+            const {
+                year: yearB,
+                month: monthB,
+                day: dayB
+            } = b.date;
+            
+            if (yearA >= yearB){
+                console.log(this.months[monthA], this.months[monthB], this.months[monthA] >= this.months[monthB])
+                if (this.months[monthA] >= this.months[monthB]) {
+                    console.log(dayA, dayB, (dayA <= dayB) ? 1 : -1)
+                    return (dayA > dayB) ? 1 : -1;
+                } 
+                else return -1;
+            }
+            else return -1;
+        })
+
+        this.setState({ events: formattedEvents })
+    }
+
     componentWillMount() {
         
     }
@@ -40,15 +85,21 @@ class Calendar extends Component {
             points,
             time,
         } = event;
+
+        const {
+            selectedEvent
+        } = this.state;
+
+        if (this.state.events.length - index > this.props.numOfEvents) return null;
+
         
         let active = (eventActive) ? {backgroundColor: '#f0d03b'} : {backgroundColor: '#fff'}
+        let clickedContainer = (selectedEvent === index) ? "container containerOnClick" : "container";
         return (
-            <div key={name} className='container' style={active}
-            onMouseEnter={() => {
-                    this.setState({selectedEvent: index})
-            }}
-            onMouseLeave={() => {
-                setTimeout(() => this.setState({selectedEvent: -1}), 500)
+            <div key={name+date+time} className={clickedContainer} style={active}
+            onClick={() => {
+                let num = (selectedEvent === index) ? -1 : index;
+                this.setState({selectedEvent: num})
             }}
             >
                 <div className='date unselectable'>
@@ -72,51 +123,14 @@ class Calendar extends Component {
 
     render() {
         const {
-            events,
             title,
             numOfElements
         } = this.props;
-        const {
-            container
-        } = Styles;
-        let formattedEvents = [];
-        if(events && events[0] && events[0].date !== Object(events[0].date)){
-            events.map((item, index) => {
-                    formattedEvents.push(Object.assign({}, item));
-                    let date = convertNumToDate(formattedEvents[index].date)
-                    formattedEvents[index].date = {};
-                    formattedEvents[index].date.day = date.day;
-                    formattedEvents[index].date.month = date.month;
-                    formattedEvents[index].date.year = date.year;
-            })
-        }
-        formattedEvents.sort((a,b) => {
-            const {
-                year: yearA,
-                month: monthA,
-                day: dayA
-            } = a.date;
-
-            const {
-                year: yearB,
-                month: monthB,
-                day: dayB
-            } = b.date;
-            if (yearA >= yearB){
-                console.log(this.months[monthA], this.months[monthB], this.months[monthA] >= this.months[monthB])
-                if (this.months[monthA] >= this.months[monthB]) {
-                    console.log(dayA, dayB, (dayA <= dayB) ? 1 : -1)
-                    return (dayA > dayB) ? 1 : -1;
-                } 
-                else return -1;
-            }
-            else return -1;
-        })
-
+        
         return (
-            <div style={container}>
+            <div className="calendarContainer">
                 <h3 style={{textAlign: 'center'}}>{title}</h3>
-               {formattedEvents.map((event, index) => this.renderItemOne(event, index))}
+               {this.state.events.map((event, index) => this.renderItemOne(event, index))}
             </div>
         )
     }
@@ -142,19 +156,5 @@ Calendar.propTypes = {
    
 }
 
-
-const Styles = {
-    container: {
-        marginLeft: "auto",
-        marginRight: "auto",
-        flex: 1,
-        backgroundColor: '#fff',
-        width: 'auto',
-        height: 350,
-        flexDirection: 'row',
-        paddingLeft: 5,
-        paddingRight: 5,
-    }
-}
 
 export { Calendar }
