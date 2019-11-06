@@ -13,16 +13,12 @@
     border-bottom: 3px double #f0d03b;
     border-left: 3px double #f0d03b;
 
-    transition: top .3s ease-out;
-    -moz-transition: top .3s ease-out;
-    -o-transition: top .3s ease-out;
-    -webkit-transition: top .3s ease-out;
+    transition: top .3s ease;
+    -moz-transition: top .3s ease;
+    -o-transition: top .3s ease;
+    -webkit-transition: top .3s ease;
 }
 
-.loginContainer:hover {
+.active {
     top: 0px;
-    transition: top .3s ease-in;
-    -moz-transition: top .3s ease-in;
-    -o-transition: top .3s ease-in;
-    -webkit-transition: top .3s ease-in;
 }

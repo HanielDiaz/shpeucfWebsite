@@ -9,6 +9,7 @@ class LoginComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            active: false
         }
         this.fields = [
             {
@@ -32,8 +33,14 @@ class LoginComponent extends Component {
     }
     
     render() {
+        const {
+            active
+        } = this.state;
+        let activated = (active) ? 'loginContainer active' : 'loginContainer';
         return (
-            <div className='loginContainer'>
+            <div className={activated}
+            onClick={() => {this.setState({active: !active})}}
+            >
               <Form 
               fields={this.fields}
               submitName={"Submit"}

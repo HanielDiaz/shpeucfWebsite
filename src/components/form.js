@@ -60,6 +60,7 @@ class Form extends Component {
             <form onSubmit= {(event) => {
                 event.preventDefault();
                 this.props.saveTo(this.state)}}
+                onClick={(e)=> e.stopPropagation()}
                  >
                 {this.props.fields.map((field) => this.createField(field))}
                 <input className="general" type="submit" value={this.props.submitName} />
