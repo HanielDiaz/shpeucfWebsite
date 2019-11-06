@@ -1,18 +1,23 @@
 [
     {
-        "name": "Club Meeting",
+        "name": "GBM #1",
         "date": "2019-10-28",
-        "time": "8:30PM",
-        "eventActive": true,
+        "time": "8:30PM - 9:20PM",
+        "eventActive": false,
+        "points": 5,
         "id": "1",
-        "committee": "Hello",
+        "committee": "",
         "location": "EGN2 102",
-        "description": "no"
+        "description": "Come join us for fun and pizza"
     },
     {
-        "name": "General Body Meeting",
+        "name": "Tech Committee Meeting",
         "date": "2019-08-29",
         "time": "HEC 101",
-        "id": "1"
+        "points": 2,
+        "id": "1",
+        "committee": "Tech Committee",
+        "location": "EGN2 102",
+        "description": "Code stuff"
     }
 ]

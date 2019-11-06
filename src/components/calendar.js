@@ -57,7 +57,7 @@ class Calendar extends Component {
                 </div>
                 <div className = 'info unselectable'>
                     <div className='eventData'>
-                        <h3>{name}</h3>
+                        <h3 className="meetingTitle">{name}</h3>
                         <p>time: {time}</p>
                         <p>Location: {location}</p>
                         <p>points: {points}</p>

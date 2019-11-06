@@ -23,6 +23,12 @@
     -webkit-transition: height .3s ease-in;
 }
 
+.meetingTitle {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+}
+
 .eventData {
     flex: 1;
 }
@@ -73,14 +79,13 @@ h2 {
 }
 
 h3 {
+
     border: 0px;
     font-size: 20px;
-    padding: 0px;
-    margin: 0px;
 }
 
 p {
-    padding: 1px;
+    padding: 0px;
     margin: 0px;
     flex: 1;
 }
