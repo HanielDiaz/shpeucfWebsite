@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 //import { Link } from 'react-router-dom'
 import '../style/components/form.css'
+import '../style/main.css'
 
 class Form extends Component {
     constructor(props) {
@@ -57,11 +58,13 @@ class Form extends Component {
 
     render() {
         return (
-            <form onSubmit= {(event) => {
-                event.preventDefault();
-                this.props.saveTo(this.state)}}
-                onClick={(e)=> e.stopPropagation()}
-                 >
+            <form 
+            className="notClickable"
+            onSubmit= {(event) => {
+            event.preventDefault();
+            this.props.saveTo(this.state)}}
+            onClick={(e)=> e.stopPropagation()}
+            >
                 {this.props.fields.map((field) => this.createField(field))}
                 <input className="general" type="submit" value={this.props.submitName} />
             </form>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { convertNumToDate, distance } from '../utils';
 import '../style/components/calendar.css';
+import '../style/main.css';
 
 class Calendar extends Component {
     constructor(props) {
@@ -94,7 +95,8 @@ class Calendar extends Component {
 
         
         let active = (eventActive) ? {backgroundColor: '#fff'} : {backgroundColor: '#fff'}
-        let clickedContainer = (selectedEvent === index) ? "container containerOnClick" : "container";
+        let clickedContainer = (selectedEvent === index) ? "containerOnClick" : "";
+        clickedContainer += " container clickable"
         return (
             <div key={name+date+time} className={clickedContainer} style={active}
             onClick={() => {

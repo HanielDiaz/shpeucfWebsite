@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form } from '../components'
 import { loginUser } from '../modules/User'
+import '../style/main.css'
 import '../style/components/login.css'
 import { connect } from 'react-redux'
 
@@ -37,6 +38,7 @@ class LoginComponent extends Component {
             active
         } = this.state;
         let activated = (active) ? 'loginContainer active' : 'loginContainer';
+        activated += " unselectable clickable"
         return (
             <div className={activated}
             onClick={() => {this.setState({active: !active})}}

@@ -15,6 +15,14 @@
     flex: 1;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
+.notClickable {
+    cursor: default;
+}
+
 .unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
