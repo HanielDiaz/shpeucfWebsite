@@ -16,8 +16,8 @@ class Header extends Component {
             link: ""
         },
         {
-            text: "About",
-            link: "About"
+            text: "Sponsor",
+            link: "Sponsor"
         },
         ]
     }
