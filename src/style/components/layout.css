@@ -49,8 +49,24 @@ div#events {
 }
 
 div#sponsors {
-	clear: both;
+	display: -webkit-flex; /* Safari */
+	-webkit-flex-wrap: wrap; /* Safari 6.1+ */
+	display: flex;   
+	flex-wrap: wrap;
+	flex-direction: row;
 	width: 100%;
-	
 	padding: 50px 10px;
+	text-align: center;
+}
+
+div#innerSponsors {
+	padding: 20px 10px;
+	text-align: center;
+}
+
+img#sponsors {
+	max-height: 125px;
+	max-width: 200px;
+	width: auto;
+	height: auto;
 }

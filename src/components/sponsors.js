@@ -7,38 +7,26 @@ class Sponsors extends Component {
     }
 	
     render() {
-		let rows = []
-		rows = createSponsors(this.props.sponsors)
+		let sponsorsArray = []
+		sponsorsArray = createSponsors(this.props.sponsors)
         return (
-            <div id='sponsor' align='center'>
-				<table id = "sponsors" style={{width: "50%"}}>
-					<tbody>
-						{rows}
-					</tbody>
-				</table>
+            <div id='sponsors'>
+				{sponsorsArray}
 			</div>
         )
     }
 }
 
 function createSponsors(sponsors){
-	let i=0, length = 5
-	let width = (window.innerWidth/10) + "px"
-	console.log("This width:" + width);
-	let cell = []
-	let row = []
+	let i=0
+	let sponsorsArray = []
 	for(i=0; i<sponsors.length; i++){
-		if(i%length==0){
-			row.push(<tr> {cell} </tr>)
-			cell = []
-		}
-		cell.push(<td align='center'>
-				<a href={sponsors[i].link}> <img src={sponsors[i].source} onmouseover={sponsors[i].description} 
-				style = {{maxWidth: width, height:"auto", maxHeight: "125px", width: "auto"}}/></a>
-			</td>)
+		sponsorsArray.push(<div id = 'innerSponsors'>
+				<a href={sponsors[i].link}> <img id = 'sponsors' src={sponsors[i].source} onmouseover={sponsors[i].description} 
+				style = {{maxWidth: "auto", height:"auto", maxHeight: "125px", width: "auto"}}/></a>
+			</div>)
 	}
-	row.push(<tr> {cell} </tr>)
-	return row
+	return sponsorsArray
 }
 
 const Styles = {
