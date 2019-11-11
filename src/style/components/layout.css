@@ -62,11 +62,13 @@ div#sponsors {
 div#innerSponsors {
 	padding: 20px 10px;
 	text-align: center;
+	margin: auto;
 }
 
 img#sponsors {
+	float: center;
+	width: auto;
+	height: auto;	
 	max-height: 125px;
 	max-width: 200px;
-	width: auto;
-	height: auto;
 }
