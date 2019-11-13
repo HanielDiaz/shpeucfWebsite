@@ -167,7 +167,7 @@ export const createEvent = (typeU, committeeU, nameU, descriptionU, dateU, timeU
     committee = true;
   }
 
-  let postRef = firebase.database().ref('/events/').push({
+  firebase.database().ref('/events/').push({
     type: typeU,
     committee: committeeU,
     name: nameU,

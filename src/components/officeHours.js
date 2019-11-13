@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Collapsible from 'react-collapsible';
 import '../style/main.css'
 import '../style/components/officeHours.css'
 
@@ -11,7 +10,7 @@ class OfficeHours extends Component {
         }
     }
     render() {
-		let scheduleRows = [], sponsorRows = []
+		let scheduleRows = []
 		scheduleRows = organizeSchedule(this.props.officeHourSchedule)
 		
         return (
@@ -37,7 +36,7 @@ function organizeSchedule(officeHourSchedule){
 	let currentDay = officeHourSchedule.days[0]
 	
 	while (count < officeHourSchedule.dates.length){
-		if(officeHourSchedule.dates[x].day == currentDay){
+		if(officeHourSchedule.dates[x].day === currentDay){
 			organizedData.push(officeHourSchedule.dates[x])
 			count++
 		}

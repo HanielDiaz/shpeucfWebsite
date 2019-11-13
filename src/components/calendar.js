@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { convertNumToDate, distance } from '../utils';
+import { convertNumToDate } from '../utils';
 import '../style/components/calendar.css';
 import '../style/main.css';
 
@@ -28,21 +28,21 @@ class Calendar extends Component {
         }
     }
 
-    componentWillReceiveProps(props) {
+    UNSAFE_componentWillReceiveProps(props) {
         const {
             events
         } = props;
-        let formattedEvents = new Array();
+        let formattedEvents = [];
         console.log(events)
         if (events && events[0] && events[0].date !== Object(events[0].date)) {
-            events.map((item, index) => {
-                formattedEvents.push(Object.assign({}, item));
+            for(let index = 0; index < events.length; index++){
+                formattedEvents.push(Object.assign({}, events[index]));
                 let date = convertNumToDate(formattedEvents[index].date)
                 formattedEvents[index].date = {};
                 formattedEvents[index].date.day = date.day;
                 formattedEvents[index].date.month = date.month;
                 formattedEvents[index].date.year = date.year;
-            })
+            }
         }
 
         formattedEvents.sort((a,b) => {
@@ -77,7 +77,7 @@ class Calendar extends Component {
     }
 
     renderItemOne(event, index) {
-           const {
+        const {
             date,
             description,
             eventActive,
@@ -111,7 +111,7 @@ class Calendar extends Component {
                 <div className = 'info unselectable'>
                     <div className='eventData'>
                         <h3 className="meetingTitle">{name}</h3>
-                        <p>time: {time}</p>
+                        <p>Time: {time}</p>
                         <p>Location: {location}</p>
                         <p>points: {points}</p>
                     </div>
@@ -126,7 +126,6 @@ class Calendar extends Component {
     render() {
         const {
             title,
-            numOfElements
         } = this.props;
         
         return (

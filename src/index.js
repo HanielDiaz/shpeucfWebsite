@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router'
 import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from './store'
 import Home from './containers/home'
-import About from './containers/about'
 import Sponsor from './containers/sponsor'
 import firebase from 'firebase';
 

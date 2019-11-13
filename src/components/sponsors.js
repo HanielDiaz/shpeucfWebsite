@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import '../style/main.css'
 
-class Sponsors extends Component {
-    constructor(props) {
-        super(props);
-    }
-	
+class Sponsors extends Component {	
     render() {
 		let rows = []
 		rows = createSponsors(this.props.sponsors)
@@ -27,33 +23,18 @@ function createSponsors(sponsors){
 	console.log("This width:" + width);
 	let cell = []
 	let row = []
-	for(i=0; i<sponsors.length; i++){
-		if(i%length==0){
+	for(i = 0; i < sponsors.length; i++){
+		if(i % length === 0){
 			row.push(<tr> {cell} </tr>)
 			cell = []
 		}
 		cell.push(<td align='center'>
-				<a href={sponsors[i].link}> <img src={sponsors[i].source} onmouseover={sponsors[i].description} 
+				<a href={sponsors[i].link}> <img alt={sponsors[i].description} src={sponsors[i].source} onmouseover={sponsors[i].description} 
 				style = {{maxWidth: width, height:"auto", maxHeight: "125px", width: "auto"}}/></a>
 			</td>)
 	}
 	row.push(<tr> {cell} </tr>)
 	return row
-}
-
-const Styles = {
-    container: {
-        flex: 1,
-		//backgroundColor: '#f0d03b',
-		backgroundColor: '#000',
-        width: 500,
-        height: 300,
-        flexDirection: 'row',
-        paddingLeft: 5,
-		paddingRight: 5,
-		marginLeft: 'auto',
-		marginRight: 'auto'
-    }
 }
 
 export { Sponsors }
