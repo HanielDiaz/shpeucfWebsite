@@ -131,7 +131,7 @@ class Calendar extends Component {
         
         return (
             <div className="calendarContainer">
-                <h1 style={{textAlign: 'center'}}>{title}</h1>
+                <h3 id="calendar">{title}</h3>
                {this.state.events.map((event, index) => this.renderItemOne(event, index))}
             </div>
         )

@@ -17,11 +17,12 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1 {
+h1#main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
-h3 {
+h3#main {
 	padding: 5px 20px;
 	margin: 0;
 }

@@ -14,6 +14,7 @@ h1#officeHours {
 
 h3#officeHours {
 	text-align: center;
+	margin-top: -10px
 }
 
 tr#officeHours.highlight {

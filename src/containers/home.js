@@ -39,14 +39,16 @@ class Home extends Component {
                         <div id="motto">
                             <p style={{fontStyle: 'italic'}}>{this.motto}</p>
                         </div>
+                        <h1 id="main">Calendar</h1>
                         <Calendar 
                         numOfEvents={4}
                         title="Upcoming Events"
                         events={eventList}
                         />
+                        <h1 id="main">OfficeHours</h1>
                         <OfficeHours officeHourSchedule={officeHourSchedule} />
                         <h1 style={{textAlign:'center'}}>Sponsors</h1>
-                        <hr />
+                        <hr style={{width: (.9*window.innerWidth)}}/>
                         <Sponsors sponsors={sponsors} />
                     </div>
 			    </div>
