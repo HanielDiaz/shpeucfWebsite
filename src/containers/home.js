@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Header, BodyLayout, Calendar, OfficeHours, Sponsors } from '../components'
-import {
-    fetchEvents
-} from '../modules'
-// import { Link } from 'react-router-dom'
+import { fetchEvents } from '../modules'
 import '../style/main.css'
 import '../style/components/layout.css'
 import officeHourSchedule from '../data/OfficeHours'
 import sponsors from '../data/Sponsors'
-import events from '../data/Events'
-import bg from '../assets/bg_image.jpg' 
+//import events from '../data/Events'
+//import bg from '../assets/bg_image.jpg' 
 
 class Home extends Component {
     constructor(props) {
@@ -19,7 +16,7 @@ class Home extends Component {
             
         }
 
-        this.motto = (Math.floor(Math.random() * 100) > 5) ?
+        this.motto = (Math.floor(Math.random() * 100) % 2 === 0) ?
             'Working with a group of strangers can be terrifying. SHPE is here to tear down walls and build up friendships. We welcome you to a little something we call "familia".' :
             'It is hard to have the competitive advantage in STEM without being left behind. Your SHPE "familia" keeps you included. We provide the development opportunities that will keep your future bright.'
 
@@ -38,7 +35,7 @@ class Home extends Component {
             <body>
                 <div id="container">
 				    <Header/>
-				    <div id="wrapper" style={{backgroundColor: '#f0d03b'}}>
+				    <div id="wrapper">
                         <div id="motto">
                             <p style={{fontStyle: 'italic'}}>{this.motto}</p>
                         </div>
@@ -48,7 +45,7 @@ class Home extends Component {
                         events={eventList}
                         />
                         <OfficeHours officeHourSchedule={officeHourSchedule} />
-                        <h2 style={{textAlign:'center'}}>Sponsors</h2>
+                        <h1 style={{textAlign:'center'}}>Sponsors</h1>
                         <hr />
                         <Sponsors sponsors={sponsors} />
                     </div>

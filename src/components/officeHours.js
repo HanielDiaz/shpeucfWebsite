@@ -16,7 +16,7 @@ class OfficeHours extends Component {
 		
         return (
             <div className='officeHours' id='officeHours'>
-				<h1 id="officeHours"> Office Hours </h1>
+				<h1 id="officeHours">Office Hours</h1>
 				<h3 id="officeHours"> {this.props.officeHourSchedule.room} </h3>
 					<table id="officeHours">
 						<tbody>

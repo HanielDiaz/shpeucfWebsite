@@ -6,6 +6,7 @@ html, body {
 body {
 	color: #292929;
 	font: 90% Roboto, Arial, sans-serif;
+	font-family: 'Times New Roman', Times, serif;
 	font-weight: 300;
 }
 
@@ -51,6 +52,5 @@ div#events {
 div#sponsors {
 	clear: both;
 	width: 100%;
-	
 	padding: 50px 10px;
 }
