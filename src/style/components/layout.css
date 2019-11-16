@@ -6,6 +6,7 @@ html, body {
 body {
 	color: #292929;
 	font: 90% Roboto, Arial, sans-serif;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-weight: 300;
 }
 
@@ -56,6 +57,8 @@ div#sponsors {
 	flex-direction: row;
 	margin: auto;
 	width: 80%;
+	clear: both;
+	width: 100%;
 	padding: 50px 10px;
 	text-align: center;
 }

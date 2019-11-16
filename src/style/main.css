@@ -13,12 +13,24 @@
     display: -ms-flexbox;
     display: -moz-box;
     display: -webkit-flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #page {
     display: flex;
     flex-direction: column;
     flex: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1#main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h3#main {
+	padding: 5px 20px;
+	margin: 0;
 }
 
 .clickable {

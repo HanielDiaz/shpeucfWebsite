@@ -3,11 +3,11 @@
     overflow: hidden;
     border-radius: 3px;
     padding: 0px 10px 0px;
-    margin: 5px;
+    margin: 5px 5% 0px 5%;
     box-shadow: 2px 5px 10px #000a;
     flex: 1;
     height: 75px;
-    width: 100%;
+    width: 90%;
     flex-wrap: row wrap;
     transition: height .3s ease;
     -moz-transition: height .3s ease;
@@ -82,10 +82,12 @@ h2 {
     font-size: 40px;
 }
 
-h3 {
+h3#calendar{
 
     border: 0px;
     font-size: 20px;
+    margin-top: -8px;
+    text-align: center;
 }
 
 p {

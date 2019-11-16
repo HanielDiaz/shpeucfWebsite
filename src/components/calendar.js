@@ -98,7 +98,11 @@ class Calendar extends Component {
         let clickedContainer = (selectedEvent === index) ? "containerOnClick" : "";
         clickedContainer += " container clickable"
         return (
-            <div key={name+date+time} className={clickedContainer} style={active}
+            <div key={name+date+time}
+                 className={clickedContainer}
+                 style={eventActive ? 
+                    {backgroundColor:'#fff', borderLeftWidth:'6px', borderLeftStyle:'solid', borderLeftColor:'#f0d03b', borderRadius:'4px'} :
+                    {backgroundColor:'#fff', borderLeftWidth:'6px', borderLeftStyle:'solid', borderRadius:'4px'}}
             onClick={() => {
                 let num = (selectedEvent === index) ? -1 : index;
                 this.setState({selectedEvent: num})
@@ -130,7 +134,7 @@ class Calendar extends Component {
         
         return (
             <div className="calendarContainer">
-                <h3 style={{textAlign: 'center'}}>{title}</h3>
+                <h3 id="calendar">{title}</h3>
                {this.state.events.map((event, index) => this.renderItemOne(event, index))}
             </div>
         )
@@ -156,6 +160,5 @@ Calendar.propTypes = {
         })).isRequired,
    
 }
-
 
 export { Calendar }
