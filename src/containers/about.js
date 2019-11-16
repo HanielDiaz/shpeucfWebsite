@@ -10,9 +10,7 @@ export default class About extends Component {
             header: 'title'
         }
     }
-    componentWillMount() {
-        
-    }
+
     render() {
         return (
             <div id='page'>

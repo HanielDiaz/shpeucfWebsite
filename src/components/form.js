@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-//import { Link } from 'react-router-dom'
 import '../style/components/form.css'
 import '../style/main.css'
 
@@ -9,10 +8,6 @@ class Form extends Component {
         super(props);
         this.state = {
         }
-    }
-
-    componentWillMount() {
-        
     }
 
     changeState(name, val) {
@@ -28,7 +23,6 @@ class Form extends Component {
             name,
             type,
             required,
-            css
         } = field;
 
         let input = null;
@@ -48,7 +42,8 @@ class Form extends Component {
             break;
         }
         return (
-        <label className="fieldContainer">
+        <label key={name+type}
+         className="fieldContainer">
             <div className="inputContainer">
                 {input}
             </div>
@@ -74,11 +69,7 @@ class Form extends Component {
 
 
 Form.propTypes = {
-    fields: PropTypes.arrayOf(PropTypes.objectOf({
-        name: PropTypes.string,
-        type: PropTypes.string,
-        required: PropTypes.bool
-    })).isRequired,
+    fields: PropTypes.arrayOf(PropTypes.object),
     saveTo: PropTypes.func.isRequired,
     submitName: PropTypes.string
 }

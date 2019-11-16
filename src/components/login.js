@@ -25,10 +25,7 @@ class LoginComponent extends Component {
             },
         ]
     }
-    componentWillMount() {
         
-    }
-    
     handleSubmit(userCredentials) {
         this.props.loginUser(userCredentials);
     }

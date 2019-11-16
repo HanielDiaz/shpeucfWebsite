@@ -16,16 +16,11 @@ class Header extends Component {
             link: ""
         },
         {
-            text: "About",
-            link: "About"
+            text: "Sponsor",
+            link: "Sponsor"
         },
         ]
     }
-
-    componentWillMount() {
-        
-    }
-
     render() {
         return (
             <div className='containerGeneral'>
@@ -35,7 +30,7 @@ class Header extends Component {
                         open={false}
                         >
                             {this.pages.map(({text, link}) => (
-                                <Link className="listElement" to={`./${link}`}>{text}</Link>
+                                <Link key={link} className="listElement" to={`./${link}`}>{text}</Link>
                             ))}
                         </ul>
                 </div>

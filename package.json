@@ -15,6 +15,7 @@
     "react-scripts": "2.1.8"
   },
   "dependencies": {
+    "@nivo/pie": "^0.59.1",
     "connected-react-router": "4.5.0",
     "firebase": "^7.0.0",
     "react": "16.9.0",

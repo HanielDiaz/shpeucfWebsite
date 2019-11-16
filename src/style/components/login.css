@@ -12,7 +12,7 @@
     background-color: #0008;
     border-bottom: 3px double #f0d03b;
     border-left: 3px double #f0d03b;
-
+    z-index: 100;
     transition: top .3s ease;
     -moz-transition: top .3s ease;
     -o-transition: top .3s ease;

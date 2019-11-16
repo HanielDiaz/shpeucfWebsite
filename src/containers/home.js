@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Header, BodyLayout, Calendar, OfficeHours, Sponsors } from '../components'
+import { Header, Calendar, OfficeHours, Sponsors } from '../components'
 import {
     fetchEvents
 } from '../modules'
-// import { Link } from 'react-router-dom'
 import '../style/main.css'
 import '../style/components/layout.css'
 import officeHourSchedule from '../data/OfficeHours'
 import sponsors from '../data/Sponsors'
-import events from '../data/Events'
-import bg from '../assets/bg_image.jpg' 
 
 class Home extends Component {
     constructor(props) {
@@ -55,19 +52,6 @@ class Home extends Component {
 			    </div>
             </body>
         )
-    }
-}
-
-const stylesheet = {
-    collapsibleContainer: {
-        backgroundColor: '#f00',
-        flex: 1
-    },
-    tableContainer : {
-
-    },
-    tableItem: {
-
     }
 }
 
