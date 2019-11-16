@@ -509,22 +509,6 @@ export const getPrivilege = () => {
     };
 }
 
-
-
-
-
-// Login Actions
-const isVerifiedUser = ({
-    email,
-    password
-}) => {
-    return (dispatch) => {
-        dispatch({
-            type: ACTIONS.VERIFIED_USER
-        });
-    }
-}
-
 export const resetPassword = ({
     email
 }) => {
