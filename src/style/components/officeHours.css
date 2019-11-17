@@ -39,11 +39,11 @@
 	border-width: thin;
   }
   #timeH{
-	font-size: xx-small;
+	font-size: 8px;
 	line-height: 25%;
   }
   #nameH{
-	font-size: x-small;
+	font-size: 8px;
   }
   h3#dayH{
 	padding: 15px 0px;
@@ -61,11 +61,12 @@
 	border-width: thin;
   }
   #timeH{
-	font-size: 43%;
+	font-size: 5px;
 	line-height: 0px;
   }
   #nameH{
-	font-size: xx-small;
+	font-weight: normal;
+	font-size: 6px;
   }
   h3#dayH{
 	padding: 10px 0px;
