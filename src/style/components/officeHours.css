@@ -4,6 +4,8 @@
 	text-align: center;
 	justify-content: center;
 	color: black;
+	padding-top: 20%;
+	line-height: 0px;
 }
 
 #timeH{
@@ -11,6 +13,7 @@
 	text-align: center;
 	justify-content: center;
 	color: black;
+	line-height: 50%;
 }
 
 .circle{
@@ -27,19 +30,46 @@
 }
 
 @media only screen and (max-width: 550px) {
+  .officeHoursMain{
+	width: 100%;
+  }
   .circle {
-    width: 80px;
-	height: 80px;
+    width: 75px;
+	height: 75px;
 	border-width: thin;
   }
   #timeH{
 	font-size: xx-small;
+	line-height: 25%;
   }
   #nameH{
 	font-size: x-small;
   }
   h3#dayH{
 	padding: 15px 0px;
+	font-size: small;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .officeHoursMain{
+	width: 100%;
+  }
+  .circle {
+    width: 55px;
+	height: 55px;
+	border-width: thin;
+  }
+  #timeH{
+	font-size: 43%;
+	line-height: 0px;
+  }
+  #nameH{
+	font-size: xx-small;
+  }
+  h3#dayH{
+	padding: 10px 0px;
+	font-size: x-small;
   }
 }
 
