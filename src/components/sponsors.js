@@ -29,18 +29,4 @@ function createSponsors(sponsors){
 	return sponsorsArray
 }
 
-const Styles = {
-    container: {
-        flex: 1,
-		//backgroundColor: '#f0d03b',
-		backgroundColor: '#000',
-        width: 500,
-        height: 300,
-        flexDirection: 'row',
-        paddingLeft: 5,
-		paddingRight: 5,
-		marginLeft: 'auto',
-		marginRight: 'auto'
-    }
-}
 export { Sponsors }

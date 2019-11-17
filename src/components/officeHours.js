@@ -10,17 +10,14 @@ class OfficeHours extends Component {
         }
     }
     render() {
-		let scheduleRows = []
-		scheduleRows = organizeSchedule(this.props.officeHourSchedule)
+		let schedule = []
+		schedule = organizeSchedule(this.props.officeHourSchedule)
 		
         return (
-            <div className='officeHours' id='officeHours'>
+            <div id='officeHours'>
 				<h3 id="officeHours"> {this.props.officeHourSchedule.room} </h3>
-					<table id="officeHours">
-						<tbody>
-							{scheduleRows}
-						</tbody>
-					</table>
+					<hr/>
+					{schedule}
             </div>
         )
     }
@@ -28,6 +25,7 @@ class OfficeHours extends Component {
 
 function organizeSchedule(officeHourSchedule){
 	let rows = []
+	let returnArray = []
 	//console.log(Object.keys(this.officeHourSchedule.dates))
 	let organizedData = []
 	let x = 0, y = 0, count = 0
@@ -50,30 +48,27 @@ function organizeSchedule(officeHourSchedule){
 			organizedData = []
 		}
 	}
-	return rows
+	returnArray.push(<div class='officeHoursMain'> {rows} </div>)
+	return returnArray
 }
 
 function addToScheduleTable(organizedData, rows, currentDay, highlighted){
+	let grab = []
 	let cell = []
+	let divide = []
 	let i = 0, z=0
 	let highlight = (highlighted) ? "highlight" : "";
 	
-	cell.push(<td className="day"> {currentDay} </td>) //day.charAt(0).toUpperCase() + day.slice(1).toLowerCase()
+	cell.push(<h3 id="dayH"> {currentDay} </h3>) //day.charAt(0).toUpperCase() + day.slice(1).toLowerCase()
 	for(z = 0; z < organizedData.length; z++){
-		cell.push( <td align='left'> {organizedData[z].name} </td>)
+		grab.push( <h3 id = "nameH"> {organizedData[z].name} </h3>)
 		for(i = 0; i < organizedData[z].time.length; i++){
-			if(i > 0){
-				rows.push(<tr className={highlight} id="officeHours"> {cell} </tr>)
-				cell = []
-				cell.push(<td></td>)
-				cell.push(<td></td>)
-			}
-			cell.push( <td align='right'> {organizedData[z].time[i]} </td>)
+			grab.push( <p id = "timeH"> {organizedData[z].time[i]} </p>)
 		}
-		rows.push(<tr className={highlight} id="officeHours"> {cell} </tr>)
-		cell = []
-		cell.push(<td></td>)
+		cell.push(<div class = "circle"> {grab} </div>)
+		grab = []
 	}
+	rows.push(<div class = "newDay"> {cell} </div>)
 	return rows
 }
 

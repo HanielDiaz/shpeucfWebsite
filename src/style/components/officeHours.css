@@ -1,11 +1,46 @@
-.day {
+#nameH{
+	display: flex;
 	font-weight: bold;
+	text-align: center;
+	justify-content: center;
+	color: black;
 }
 
+#timeH{
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	color: black;
+}
 
-table#officeHours {
-	width: 90%;
+.circle{
+	vertical-align: middle;
+	text-align: center;
+	width:105px;
+	height: 105px;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: medium;
+	border-color: black;
+	background-color: white;
 	margin: auto;
+}
+
+.newDay{
+	float: left;
+}
+
+.officeHoursMain{
+	margin: auto;
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	clear: both;
+}
+
+h3#dayH{
+	text-align: center;
+	padding: 25px;
 }
 
 h1#officeHours {
@@ -15,14 +50,6 @@ h1#officeHours {
 h3#officeHours {
 	text-align: center;
 	margin-top: -10px
-}
-
-tr#officeHours.highlight {
-	background-color: #f2f2f2
-}
-
-th, td{
-  padding: 15px;
 }
 
 

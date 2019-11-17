@@ -47,8 +47,8 @@ class Home extends Component {
                         />
                         <h1 id="main">OfficeHours</h1>
                         <OfficeHours officeHourSchedule={officeHourSchedule} />
-                        <h1 style={{textAlign:'center'}}>Sponsors</h1>
-                        <hr style={{width: (.9*window.innerWidth)}}/>
+                        <h1>Sponsors</h1>
+                        <hr/>
                         <Sponsors sponsors={sponsors} />
                     </div>
 			    </div>

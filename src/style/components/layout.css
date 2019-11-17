@@ -20,9 +20,21 @@ ul li {
 	line-height: 1.6;
 }
 
+h1 {
+	clear: both;
+	margin: auto;
+	text-align: center;
+}
+
 h3 {
 	padding: 5px 20px;
 	margin: 0;
+	clear: both;
+}
+
+hr {
+	width: 90%;
+	margin: auto;
 }
 
 div#hours {
@@ -56,9 +68,8 @@ div#sponsors {
 	flex-wrap: wrap;
 	flex-direction: row;
 	margin: auto;
-	width: 80%;
 	clear: both;
-	width: 100%;
+	width: 95%;
 	padding: 50px 10px;
 	text-align: center;
 }
@@ -67,12 +78,4 @@ div#innerSponsors {
 	padding: 20px 10px;
 	text-align: center;
 	margin: auto;
-}
-
-img#sponsors {
-	float: center;
-	width: auto;
-	height: auto;	
-	max-height: 125px;
-	max-width: 200px;
 }
