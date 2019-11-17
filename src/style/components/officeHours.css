@@ -26,21 +26,37 @@
 	margin: auto;
 }
 
+@media only screen and (max-width: 550px) {
+  .circle {
+    width: 80px;
+	height: 80px;
+	border-width: thin;
+  }
+  #timeH{
+	font-size: xx-small;
+  }
+  #nameH{
+	font-size: x-small;
+  }
+  h3#dayH{
+	padding: 15px 0px;
+}
+}
+
 .newDay{
 	float: left;
 }
 
 .officeHoursMain{
+	display: flex;
 	margin: auto;
 	width: 90%;
-	display: flex;
 	justify-content: center;
-	clear: both;
 }
 
 h3#dayH{
 	text-align: center;
-	padding: 25px;
+	padding: 25px 0px;
 }
 
 h1#officeHours {
