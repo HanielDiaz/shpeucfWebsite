@@ -37,7 +37,7 @@ class Home extends Component {
 				    <Header/>
 				    <div id="wrapper">
                         <div id="motto">
-                            <p style={{fontStyle: 'italic'}}>{this.motto}</p>
+                            <p style={{fontStyle: 'italic', textAlign: 'center'}}>{this.motto}</p>
                         </div>
                         <h1 id="main">Calendar</h1>
                         <Calendar 
