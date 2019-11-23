@@ -24,7 +24,7 @@ class Header extends Component {
     render() {
         return (
             <div className='containerGeneral'>
-                <div className='containerGeneral'>
+                <div className='containerGeneral unselectable'>
                         <ul
                         className="list"
                         open={false}
