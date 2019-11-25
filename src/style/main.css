@@ -7,13 +7,27 @@
     align-items: center;
     justify-content: center;
     justify-self: center;
-    display: flexbox;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.row {
     display: flexbox;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -moz-box;
     display: -webkit-flex;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.column {
+    display: flexbox;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: -webkit-flex;
+    flex-basis: 100%;
+    flex: 1;
 }
 
 #page {

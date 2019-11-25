@@ -1,0 +1,26 @@
+.image{
+    height: 800px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#motto{
+    height: 800px;
+    width: 100%;
+    background-image: url('../../assets/highresCover1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+#motto p{
+    margin-top: 0px;
+    padding: 40px;
+    text-shadow: -1px 1px 1px #000;
+    font-size: 30px;
+    color: #f0d03b;
+}
+
+#motto p::after {
+    text-shadow: 1px -1px 1px #000;
+
+}

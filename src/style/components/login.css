@@ -19,6 +19,10 @@
     -webkit-transition: top .3s ease;
 }
 
+.text {
+    margin-top: 20px;
+}
+
 .active {
     top: 0px;
 }

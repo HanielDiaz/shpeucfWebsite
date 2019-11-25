@@ -1,93 +1,6 @@
-#nameH{
-	display: flex;
-	font-weight: bold;
-	text-align: center;
-	justify-content: center;
-	color: black;
-	padding-top: 20%;
-	line-height: 0px;
-}
-
-#timeH{
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	color: black;
-	line-height: 50%;
-}
-
-.circle{
-	vertical-align: middle;
-	text-align: center;
-	width:105px;
-	height: 105px;
-	border-radius: 50%;
-	border-style: solid;
-	border-width: medium;
-	border-color: black;
-	background-color: white;
+table#officeHours {
+	width: 80%;
 	margin: auto;
-}
-
-@media only screen and (max-width: 550px) {
-  .officeHoursMain{
-	width: 100%;
-  }
-  .circle {
-    width: 75px;
-	height: 75px;
-	border-width: thin;
-  }
-  #timeH{
-	font-size: 8px;
-	line-height: 25%;
-  }
-  #nameH{
-	font-size: 8px;
-  }
-  h3#dayH{
-	padding: 15px 0px;
-	font-size: small;
-  }
-}
-
-@media only screen and (max-width: 390px) {
-  .officeHoursMain{
-	width: 100%;
-  }
-  .circle {
-    width: 55px;
-	height: 55px;
-	border-width: thin;
-  }
-  #timeH{
-	font-size: 5px;
-	line-height: 0px;
-  }
-  #nameH{
-	font-weight: normal;
-	font-size: 6px;
-  }
-  h3#dayH{
-	padding: 10px 0px;
-	font-size: x-small;
-  }
-}
-
-.newDay{
-	float: left;
-}
-
-.officeHoursMain{
-	display: flex;
-	margin: auto;
-	width: 90%;
-	justify-content: center;
-}
-
-h3#dayH{
-	text-align: center;
-	padding: 25px 0px;
 }
 
 h1#officeHours {
@@ -96,7 +9,10 @@ h1#officeHours {
 
 h3#officeHours {
 	text-align: center;
-	margin-top: -10px
 }
 
+th, td{
+  padding: 15px;
+}
 
+tr#officeHours:nth-child(even) {background-color: #f2f2f2;}
