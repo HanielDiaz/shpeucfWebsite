@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Collapsible from 'react-collapsible';
 import '../style/main.css'
 import '../style/components/officeHours.css'
 
@@ -10,14 +11,18 @@ class OfficeHours extends Component {
         }
     }
     render() {
-		let schedule = []
-		schedule = organizeSchedule(this.props.officeHourSchedule)
+		let scheduleRows = [], sponsorRows = []
+		scheduleRows = organizeSchedule(this.props.officeHourSchedule)
 		
         return (
-            <div id='officeHours'>
+            <div className='officeHours' id='officeHours'>
+				<h1 id="officeHours"> Office Hours </h1>
 				<h3 id="officeHours"> {this.props.officeHourSchedule.room} </h3>
-					<hr/>
-					{schedule}
+					<table id="officeHours">
+						<tbody>
+							{scheduleRows}
+						</tbody>
+					</table>
             </div>
         )
     }
@@ -25,7 +30,6 @@ class OfficeHours extends Component {
 
 function organizeSchedule(officeHourSchedule){
 	let rows = []
-	let returnArray = []
 	//console.log(Object.keys(this.officeHourSchedule.dates))
 	let organizedData = []
 	let x = 0, y = 0, count = 0
@@ -33,14 +37,14 @@ function organizeSchedule(officeHourSchedule){
 	let currentDay = officeHourSchedule.days[0]
 	
 	while (count < officeHourSchedule.dates.length){
-		if(officeHourSchedule.dates[x].day === currentDay){
+		if(officeHourSchedule.dates[x].day == currentDay){
 			organizedData.push(officeHourSchedule.dates[x])
 			count++
 		}
 		x++
 		if(x >= officeHourSchedule.dates.length){ //all data has been cycled, array of currentDay is complete
 			x = 0 //reset dates counter
-			rows = addToScheduleTable(organizedData, rows, currentDay, (y % 2 === 0)) //update table
+			rows = addToScheduleTable(organizedData, rows, currentDay) //update table
 			y++ //iterate current day
 			if(y < officeHourSchedule.days.length){ //make sure y doesn't go over the number of days
 				currentDay = officeHourSchedule.days[y] //set current day
@@ -48,27 +52,28 @@ function organizeSchedule(officeHourSchedule){
 			organizedData = []
 		}
 	}
-	returnArray.push(<div class='officeHoursMain'> {rows} </div>)
-	return returnArray
+	return rows
 }
 
-function addToScheduleTable(organizedData, rows, currentDay, highlighted){
-	let grab = []
+function addToScheduleTable(organizedData, rows, currentDay){
 	let cell = []
-	let divide = []
 	let i = 0, z=0
-	let highlight = (highlighted) ? "highlight" : "";
-	
-	cell.push(<h3 id="dayH"> {currentDay} </h3>) //day.charAt(0).toUpperCase() + day.slice(1).toLowerCase()
+	cell.push(<td> {currentDay} </td>) //day.charAt(0).toUpperCase() + day.slice(1).toLowerCase()
 	for(z = 0; z < organizedData.length; z++){
-		grab.push( <h3 id = "nameH"> {organizedData[z].name} </h3>)
+		cell.push( <td align='left'> {organizedData[z].name} </td>)
 		for(i = 0; i < organizedData[z].time.length; i++){
-			grab.push( <p id = "timeH"> {organizedData[z].time[i]} </p>)
+			if(i > 0){
+				rows.push(<tr id="officeHours"> {cell} </tr>)
+				cell = []
+				cell.push(<td></td>)
+				cell.push(<td></td>)
+			}
+			cell.push( <td align='right'> {organizedData[z].time[i]} </td>)
 		}
-		cell.push(<div class = "circle"> {grab} </div>)
-		grab = []
+		rows.push(<tr id="officeHours"> {cell} </tr>)
+		cell = []
+		cell.push(<td></td>)
 	}
-	rows.push(<div class = "newDay"> {cell} </div>)
 	return rows
 }
 
