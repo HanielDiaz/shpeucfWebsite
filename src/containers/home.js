@@ -6,8 +6,10 @@ import {
 } from '../modules'
 import '../style/main.css'
 import '../style/components/layout.css'
-import officeHourSchedule from '../data/OfficeHours'
-import sponsors from '../data/Sponsors'
+import officeHourSchedule from '../data/OfficeHours';
+import sponsors from '../data/Sponsors';
+import '../style/containers/home.css';
+import image from '../assets/highresCover1.jpg';
 
 class Home extends Component {
     constructor(props) {
@@ -35,8 +37,9 @@ class Home extends Component {
             <body>
                 <div id="container">
 				    <Header/>
+                    {/* <img className="image" src={image}/> */}
 				    <div id="wrapper">
-                        <div id="motto">
+                        <div id="motto" className="unselectable">
                             <p style={{fontStyle: 'italic', textAlign: 'center'}}>{this.motto}</p>
                         </div>
                         <h1 id="main">Calendar</h1>
