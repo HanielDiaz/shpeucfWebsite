@@ -4,6 +4,7 @@ h3#title {
     font-size: 20px;
     margin-top: -8px;
     text-align: center;
+    
 }
 
 .container.One{
@@ -87,6 +88,9 @@ div.One{
 h1.One{
     margin: 0px;
     padding: 0px;
+    color: #f0d03b;
+    text-shadow: 1px 0 1px #000, -1px 0 1px #000, 0 1px 1px #000, 0 -1px 1px #000;
+
 }
 
 h2.One{
@@ -165,7 +169,7 @@ img.Two {
 
 .date.Two{
     color: #f0d03b;
-    text-shadow: 1px 0 1px #000;
+    text-shadow: 2px 0 1px #000, -2px 0 1px #000, 0 2px 1px #000, 0 -2px 1px #000;
     flex: .20;
     display: inherit;
     padding-top: 2px;
@@ -187,6 +191,9 @@ div.Two{
 h1.Two{
     margin: 0px;
     padding: 0px;
+    color: #f0d03b;
+    text-shadow: 1px 0 1px #000, -1px 0 1px #000, 0 1px 1px #000, 0 -1px 1px #000;
+
 }
 span.Two {
     font-size: 30px;
@@ -197,12 +204,16 @@ h2.Two{
     margin: 8px;
     font-size: 30px;
     font-weight: normal;
+    color: #f0d03b;
+    text-shadow: 1px 0 1px #000, -1px 0 1px #000, 0 1px 1px #000, 0 -1px 1px #000;
+
 }
 
 h3.Two {
     padding: 0px !important;
     margin: 0px !important;
     font-weight: normal;
+    
 }
 
 p.Two{
