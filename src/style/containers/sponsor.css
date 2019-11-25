@@ -1,0 +1,149 @@
+
+.pie {
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    box-shadow: 2px 4px 5px gray;
+    padding: 5px;
+    margin: 5px;
+    height: 400px;
+    flex: 1;
+    flex-basis: 1%;
+}
+
+
+p {
+    font-size:17px;
+}
+
+ul {
+    font-size:18px;
+}
+
+.col-3 {
+    flex: 1;
+    height: 450px
+}
+
+
+.row {
+    display: flexbox;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.something {
+    background-color: #f0d03b;
+    flex: 1;
+}
+
+.familia {
+    flex: .4;
+}
+
+.whoarewe{
+    flex: .6;
+}
+
+.community  {
+    flex: .5
+}
+
+.leadership  {
+    flex: .7
+}
+
+@media screen and (max-width: 700px){
+    .row {
+        flex-direction: column;
+    }
+}
+
+p {
+    text-align: justify;
+    margin: 10px 0px;
+}
+
+.row h3{
+    color: #f0d03b;
+    font-size: 30px;
+    text-shadow: 1px 0 1px #000, -1px 0 1px #000, 0 1px 1px #000, 0 -1px 1px #000;
+    margin: 0px 0px 0px 10px !important;
+    padding: 0px 20px 0px 0px !important;
+}
+
+.row h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 0px auto;
+    color: #f0d03b;
+    text-shadow: 1px 0 1px #000, -1px 0 1px #000, 0 1px 1px #000, 0 -1px 1px #000;
+
+
+}
+
+.gold {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: #FEC00Faa;
+}
+
+.silver {
+    background-color: #C0C0C0aa;
+}
+
+.bronze {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #cd7f32aa;
+}
+
+.col-3 h2 {
+    text-align: center;
+    margin: 0px auto;
+}
+
+.button {
+    align-self: center;
+    text-align: center;
+    align-content: center;
+    margin: 5px auto;
+    width: 300px;
+    height: 100px;
+    background-color: #f0d03b;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #000;
+}
+
+.button a {
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 300px;
+    height: 100px;
+}
+
+.sponsor {
+    text-align: center;
+    margin: 0px auto;
+}
+
+h4{
+    margin: 0px 0px 2px 0px !important;
+    padding: 0px !important;
+    text-align: center;
+    font-size: 40px;
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    align-self: center;
+}
+

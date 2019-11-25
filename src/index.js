@@ -30,6 +30,7 @@ render(
         <Switch>
           <Route exact path="/" render={() => (<Home/>)}/>
           <Route path="/Sponsor" render={() => (<Sponsor/>)}/>
+          <Route exact path="/store" render={() => window.location = 'https://squareup.com/store/shpeucf/'} />
         </Switch>
       </div>
     </ConnectedRouter>

@@ -42,16 +42,17 @@ class Home extends Component {
                         <div id="motto" className="unselectable">
                             <p style={{fontStyle: 'italic', textAlign: 'center'}}>{this.motto}</p>
                         </div>
-                        <h1 id="main">Calendar</h1>
+                        <h1 id="main" className="title">Calendar</h1>
                         <Calendar 
                         numOfEvents={4}
                         title="Upcoming Events"
                         events={eventList}
                         />
-                        <h1 id="main">OfficeHours</h1>
+                        <h1 id="main"className="title">OfficeHours</h1>
                         <OfficeHours officeHourSchedule={officeHourSchedule} />
-                        <h1>Sponsors</h1>
                         <hr/>
+
+                        <h1 className="title">Sponsors</h1>
                         <Sponsors sponsors={sponsors} />
                     </div>
 			    </div>
