@@ -76,54 +76,89 @@ class Calendar extends Component {
         
     }
 
-    renderItemOne(event, index) {
-        const {
-            date,
-            description,
-            eventActive,
-            location,
-            name,
-            points,
-            time,
-        } = event;
 
-        const {
-            selectedEvent
-        } = this.state;
-
-        if (this.state.events.length - index > this.props.numOfEvents) return null;
-
+    renderItem(type) {
         
-        let active = (eventActive) ? {backgroundColor: '#fff'} : {backgroundColor: '#fff'}
-        let clickedContainer = (selectedEvent === index) ? "containerOnClick" : "";
-        clickedContainer += " container clickable"
         return (
-            <div key={name+date+time}
-                 className={clickedContainer}
-                 style={eventActive ? 
-                    {backgroundColor:'#fff', borderLeftWidth:'6px', borderLeftStyle:'solid', borderLeftColor:'#f0d03b', borderRadius:'4px'} :
-                    {backgroundColor:'#fff', borderLeftWidth:'6px', borderLeftStyle:'solid', borderRadius:'4px'}}
-            onClick={() => {
-                let num = (selectedEvent === index) ? -1 : index;
-                this.setState({selectedEvent: num})
-            }}
-            >
-                <div className='date unselectable'>
-                    <h2>{date.day}</h2>
-                    <span>{date.month}, {date.year}</span>
-                </div>
-                <div className = 'info unselectable'>
-                    <div className='eventData'>
-                        <h3 className="meetingTitle">{name}</h3>
-                        <p>Time: {time}</p>
-                        <p>Location: {location}</p>
-                        <p>points: {points}</p>
+        <div id="events" className={`${type}`}>
+            {this.state.events.map((event, index) => {
+
+                const {
+                    date,
+                    description,
+                    eventActive,
+                    location,
+                    name,
+                    points,
+                    time,
+                    image
+                } = event;
+
+                const {
+                    selectedEvent
+                } = this.state;
+
+                var img = null;
+                if(type === "Two" && image && image !== "") {
+                    img = <img className="Two" src={`${image}`}/>
+                }
+
+                if (this.state.events.length - index > this.props.numOfEvents) return null;
+
+                
+                let active = (eventActive) ? {backgroundColor: '#fff'} : {backgroundColor: '#fff'}
+                let clickedContainer = (selectedEvent === index) ? "containerOnClick" : "";
+                clickedContainer += ` container unselectable ${(type === "One" ? "clickable" : "")} ${type}`
+                return (
+                    <div key={name+date+time}
+                        className={clickedContainer}
+                        style={eventActive ? 
+                            {
+                                flexDirection: 'column',
+                                backgroundImage: `url(${image})`,
+                                borderLeftWidth: '6px',
+                                borderLeftStyle: 'solid',
+                                borderLeftColor: '#f0d03b',
+                                borderRadius: '4px'
+                            }:
+                            {
+                                flexDirection: 'column',
+                                backgroundImage: `linear-gradient(
+                                rgba(255, 255, 255, 0.9),
+                                rgba(255, 255, 255, 0.9)
+                                ),url(${image})`,
+                                backgroundSize:'100% 100%',
+                                backgroundPosition: '50% 50%',
+                                borderLeftWidth: '6px',
+                                borderLeftStyle: 'solid',
+                                borderRadius: '4px'
+                            }
+                            }
+                    onClick={() => {
+                        if(type === "One") {
+                            let num = (selectedEvent === index) ? -1 : index;
+                            this.setState({selectedEvent: num})
+                        }
+                    }}
+                    >
+                        <div className={`date unselectable ${type}`}>
+                            <h2 className={`${type}`}>{date.day}</h2>
+                            <span className={`${type}`}>{date.month}, {date.year}</span>
+                        </div>
+                        <div className = {`info unselectable ${type}`}>
+                            <div className={`eventData ${type}`}>
+                                <h3 className={`meetingTitle ${type}`}>{name}</h3>
+                                <p className={`${type}`}>Time: {time}</p>
+                                <p className={`${type}`}>Location: {location}</p>
+                                <p className={`${type}`}>points: {points}</p>
+                            </div>
+                            <p className={`description ${type}`}>{description}</p>
+                        </div>
                     </div>
-                   <div>
-                        <p className='description'>Description: {description}</p>
-                    </div>
-                </div>
-            </div>
+                )
+                
+            })}
+        </div>
         )
     }
 
@@ -134,8 +169,8 @@ class Calendar extends Component {
         
         return (
             <div className="calendarContainer">
-                <h3 id="calendar">{title}</h3>
-               {this.state.events.map((event, index) => this.renderItemOne(event, index))}
+                <h3 id="title">{title}</h3>
+                {this.renderItem("Two")}
             </div>
         )
     }
