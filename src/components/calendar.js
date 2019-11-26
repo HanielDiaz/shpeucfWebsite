@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Modal } from './modal'
-import { convertNumToDate, distance } from '../utils';
+import { convertNumToDate } from '../utils';
+import {
+    Modal
+} from './modal'
 import '../style/components/calendar.css';
+// import '../style/main.css';
 
 class Calendar extends Component {
     constructor(props) {
@@ -10,8 +13,8 @@ class Calendar extends Component {
         this.state = {
             events: [],
             selectedEvent: {},
-            txtColor: '#000',
-            modalVisible: false
+            modalVisible: false,
+            txtColor: '#000'
         }
         this.months = {
             "Jan": 0,
@@ -29,21 +32,21 @@ class Calendar extends Component {
         }
     }
 
-    componentWillReceiveProps(props) {
+    UNSAFE_componentWillReceiveProps(props) {
         const {
             events
         } = props;
-        let formattedEvents = new Array();
+        let formattedEvents = [];
         console.log(events)
         if (events && events[0] && events[0].date !== Object(events[0].date)) {
-            events.map((item, index) => {
-                formattedEvents.push(Object.assign({}, item));
+            for(let index = 0; index < events.length; index++){
+                formattedEvents.push(Object.assign({}, events[index]));
                 let date = convertNumToDate(formattedEvents[index].date)
                 formattedEvents[index].date = {};
                 formattedEvents[index].date.day = date.day;
                 formattedEvents[index].date.month = date.month;
                 formattedEvents[index].date.year = date.year;
-            })
+            }
         }
 
         formattedEvents.sort((a,b) => {
@@ -93,79 +96,104 @@ class Calendar extends Component {
             image,
             time,
         } = this.state.selectedEvent;
-
+        const {
+            day,
+            month,
+            year
+        } = date || {};
         return (
             <Modal
             title={name}
             visible={this.state.modalVisible}
             onClose={() => this.modalOnClose()}> 
                 <div className="items">
-                <img src={image}/>
-                
-                    <div className="info">
-                        <p>time: {time}</p>
-                        <p>Location: {location}</p>
-                        <p>points: {points}</p>
+                    <img src={image}/>
+                    <div className="row">
+                        <div className="date">
+                            <h2 className="day">{day}</h2>
+                            <h2>{month }, {year}</h2>
+                        </div>
+                        <div className="info">
+                            <p>time: {time}</p>
+                            <p>Location: {location}</p>
+                            <p>points: {points}</p>
+                        </div>
+                        <p>description: {description}</p>
                     </div>
                 </div>
-                <p>description: {description}</p>
             </Modal>
         )
     }
 
-    renderItemOne(event, index) {
-        const {
-            date,
-            description,
-            eventActive,
-            location,
-            name,
-            points,
-            time,
-        } = event;
 
-        if (this.state.events.length - index > this.props.numOfEvents) return null;
-
+    renderItem(type) {
         
-        let active = (eventActive) ? {backgroundColor: '#fff'} : {backgroundColor: '#fff'}
-        // let clickedContainer = (selectedEvent === index) ? "container containerOnClick" : "container";
         return (
-            <div key={name+date+time} className={"container"} style={active}
-            onClick={() => {
-                this.setState({selectedEvent: event, modalVisible: true})
+        <div id="events" className={`${type}`}>
+            {this.state.events.map((event, index) => {
 
-            }}
-            >
-                <div className='date unselectable'>
-                    <h2>{date.day}</h2>
-                    <span>{date.month}, {date.year}</span>
-                </div>
-                <div className = 'info unselectable'>
-                    <div className='eventData'>
-                        <h3 className="meetingTitle">{name}</h3>
-                        <p>time: {time}</p>
-                        <p>Location: {location}</p>
-                        <p>points: {points}</p>
+                const {
+                    date,
+                    description,
+                    eventActive,
+                    location,
+                    name,
+                    points,
+                    time,
+                    image
+                } = event;
+
+                const {
+                    selectedEvent
+                } = this.state;
+
+                if (this.state.events.length - index > this.props.numOfEvents) return null;
+
+                
+                let active = (eventActive) ? {backgroundColor: '#fff'} : {backgroundColor: '#fff'}
+                let clickedContainer = (selectedEvent === index) ? "containerOnClick" : "";
+                clickedContainer += ` container unselectable ${(type === "One" ? "clickable" : "")} ${type}`
+                return (
+                    <div key={name+date+time}
+                        className={clickedContainer}
+                        style={{    
+                            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9),
+                            rgba(255, 255, 255, 0.9)),
+                            url(${image})`}}
+                        onClick={() => {
+                        this.setState({selectedEvent: event, modalVisible: true})
+                    }}
+                    >
+                        <div className={`date unselectable ${type}`}>
+                            <h2 className={`${type}`}>{date.day}</h2>
+                            <h2 className={`${type}`}>{date.month}, {date.year}</h2>
+                        </div>
+                        <div className = {`info unselectable ${type}`}>
+                            <div className={`eventData ${type}`}>
+                                <h3 className={`meetingTitle ${type}`}>{name}</h3>
+                                <p className={`${type}`}>Time: {time}</p>
+                                <p className={`${type}`}>Location: {location}</p>
+                                <p className={`${type}`}>points: {points}</p>
+                            </div>
+                        </div>
                     </div>
-                   <div>
-                        <p className='description'>Description: {description}</p>
-                    </div>
-                </div>
-            </div>
+                )
+                
+            })}
+        </div>
         )
     }
 
     render() {
         const {
             title,
-            numOfElements
         } = this.props;
         
         return (
             <div className="calendarContainer">
-                <h3 style={{textAlign: 'center'}}>{title}</h3>
+                <h3 id="title">{title}</h3>
+                {this.renderItem("Two")}
                 {this.renderModal()}
-               {this.state.events.map((event, index) => this.renderItemOne(event, index))}
             </div>
         )
     }
@@ -190,6 +218,5 @@ Calendar.propTypes = {
         })).isRequired,
    
 }
-
 
 export { Calendar }
