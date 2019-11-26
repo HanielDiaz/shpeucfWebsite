@@ -111,11 +111,9 @@ p {
 }
 
 .button {
-    align-self: center;
     text-align: center;
-    align-content: center;
     margin: 5px auto;
-    width: 300px;
+    width: 400px;
     height: 100px;
     background-color: #f0d03b;
     border-radius: 5px;
@@ -128,6 +126,7 @@ p {
     color: #000;
     display: block;
     width: 300px;
+    margin: 10px auto;
     height: 100px;
 }
 

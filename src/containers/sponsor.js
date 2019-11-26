@@ -7,7 +7,6 @@ import sponsors from '../data/Sponsors';
 import {
     fetchStatistics
 } from '../modules'
-import '../style/main.css'
 import '../style/containers/sponsor.css'
 
 class Sponsor extends Component {
@@ -204,17 +203,23 @@ class Sponsor extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="button">
-                        <a href='/sponsorPackage.pdf'download> Download Sponsorship Package</a>
+                    <div>
+                        <div className="button">
+                            <a href='/sponsorPackage.pdf'download> Download Sponsorship Package</a>
+                        </div>
                     </div>
-                    <div className="button">
-                        <a target="_blank" href='https://squareup.com/store/shpeucf/'> Donation Page</a>
+                    <div>
+                        <div className="button">
+                            <a target="_blank" href='https://squareup.com/store/shpeucf/'> Donation Page</a>
+                        </div>
                     </div>
                 </div>
                 <hr/>
                 <div className="row">
-                        <h1>OUR CURRENT FAMILIA</h1>
+                    <div>
+                    <h1>OUR CURRENT FAMILIA</h1>
                     <Sponsors sponsors={sponsors} />
+                    </div>
                 </div>
             </div>
         )
