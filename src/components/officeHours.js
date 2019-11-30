@@ -3,12 +3,14 @@ import Collapsible from 'react-collapsible';
 import '../style/main.css'
 import '../style/components/officeHours.css'
 
+var color;
+
 class OfficeHours extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            
         }
+		color = 0;
     }
     render() {
 		let scheduleRows = [], sponsorRows = []
@@ -16,13 +18,15 @@ class OfficeHours extends Component {
 		
         return (
             <div className='officeHours' id='officeHours'>
-				{/* <h1 id="officeHours"> Office Hours </h1> */}
-				<h3 id="officeHours"> {this.props.officeHourSchedule.room} </h3>
-					<table id="officeHours">
-						<tbody>
-							{scheduleRows}
-						</tbody>
-					</table>
+			<h1 id="officeHours" className="title">OfficeHours</h1>
+				<div className='innerOfficeHours'>
+					<h3 id="officeHours"> {this.props.officeHourSchedule.room} </h3>
+						<table id="officeHours">
+							<tbody>
+								{scheduleRows}
+							</tbody>
+						</table>
+					</div>
             </div>
         )
     }
@@ -30,7 +34,6 @@ class OfficeHours extends Component {
 
 function organizeSchedule(officeHourSchedule){
 	let rows = []
-	//console.log(Object.keys(this.officeHourSchedule.dates))
 	let organizedData = []
 	let x = 0, y = 0, count = 0
 	
@@ -58,21 +61,34 @@ function organizeSchedule(officeHourSchedule){
 function addToScheduleTable(organizedData, rows, currentDay){
 	let cell = []
 	let i = 0, z=0
-	cell.push(<td> {currentDay} </td>) //day.charAt(0).toUpperCase() + day.slice(1).toLowerCase()
+	let className
+	cell.push(<td> {currentDay} </td>)
+	if(color == 0){
+		className = 'color'
+	} else{
+		className = 'nocolor'
+	}
+	console.log({className})
 	for(z = 0; z < organizedData.length; z++){
 		cell.push( <td align='left'> {organizedData[z].name} </td>)
 		for(i = 0; i < organizedData[z].time.length; i++){
 			if(i > 0){
-				rows.push(<tr id="officeHours"> {cell} </tr>)
+				rows.push(<tr id = {className}> {cell} </tr>)
 				cell = []
 				cell.push(<td></td>)
 				cell.push(<td></td>)
 			}
 			cell.push( <td align='right'> {organizedData[z].time[i]} </td>)
 		}
-		rows.push(<tr id="officeHours"> {cell} </tr>)
+		rows.push(<tr id = {className}> {cell} </tr>)
 		cell = []
 		cell.push(<td></td>)
+		color = (color+1)%2
+		if(color == 0){
+			className = 'color'
+		} else{
+			className = 'nocolor'
+		}
 	}
 	return rows
 }

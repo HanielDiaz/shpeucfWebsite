@@ -1,6 +1,11 @@
 table#officeHours {
-	width: 90%;
+	width: 100%;
 	margin: auto;
+}
+
+div.innerOfficeHours{
+	border: 2px solid black;
+	border-radius: 10px;
 }
 
 h1#officeHours {
@@ -11,8 +16,22 @@ h3#officeHours {
 	text-align: center;
 }
 
-th, td{
-  padding: 15px;
+tr#color{
+	background-color: #fcf5d2;
+	}
+tr#nocolor{
+	}
+	
+tr#color:hover {
+	border: 1px outset #292929;
+	border-radius: 5px;
 }
 
-tr#officeHours:nth-child(even) {background-color: #fcf5d2;}
+tr#nocolor:hover {
+	border: 1px outset #292929;
+	border-radius: 5px;
+}
+
+th, td{
+  padding: 10px;
+}

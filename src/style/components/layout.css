@@ -37,6 +37,12 @@ hr {
 	margin: auto;
 }
 
+div.officeHours{
+	width: 40%;
+	margin: auto;
+	clear: both;
+}
+
 div#hours {
 	width: 100%;
 	padding: 0px 50px;
@@ -70,8 +76,6 @@ div#sponsors {
 	margin: auto;
 	clear: both;
 	width: 95%;
-	padding: 50px 10px;
-	text-align: center;
 }
 
 div#innerSponsors {

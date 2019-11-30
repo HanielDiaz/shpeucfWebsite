@@ -48,10 +48,8 @@ class Home extends Component {
                         title="Upcoming Events"
                         events={eventList}
                         />
-                        <h1 id="main"className="title">OfficeHours</h1>
                         <OfficeHours officeHourSchedule={officeHourSchedule} />
-                        <hr/>
-
+							{/*<hr/>*/}
                         <h1 className="title">Sponsors</h1>
                         <Sponsors sponsors={sponsors} />
                     </div>
