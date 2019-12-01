@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Header, Calendar, OfficeHours, Sponsors } from '../components'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Header, Calendar, OfficeHours, Sponsors} from '../components';
+import { Social } from '../components/social';
 import {
     fetchEvents
-} from '../modules'
-import '../style/main.css'
-import '../style/components/layout.css'
+} from '../modules';
+import '../style/main.css';
+import '../style/components/layout.css';
 import officeHourSchedule from '../data/OfficeHours';
 import sponsors from '../data/Sponsors';
 import '../style/containers/home.css';
@@ -48,9 +49,12 @@ class Home extends Component {
                         title="Upcoming Events"
                         events={eventList}
                         />
-                        <h1 id="main"className="title">OfficeHours</h1>
+                        <h1 id="main" className="title">OfficeHours</h1>
                         <OfficeHours officeHourSchedule={officeHourSchedule} />
                         <hr/>
+
+                        <h1 id="main" className="title">Social</h1>
+                        <Social />
 
                         <h1 className="title">Sponsors</h1>
                         <Sponsors sponsors={sponsors} />
