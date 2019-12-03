@@ -17,7 +17,7 @@ class OfficeHours extends Component {
 		scheduleRows = organizeSchedule(this.props.officeHourSchedule)
 		
         return (
-            <div className='officeHours' id='officeHours'>
+            <div className='officeHours unselectable' id='officeHours'>
 			<h1 id="officeHours" className="title">OfficeHours</h1>
 				<div className='innerOfficeHours'>
 					<h3 id="officeHours"> {this.props.officeHourSchedule.room} </h3>

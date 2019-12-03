@@ -144,16 +144,24 @@ class Calendar extends Component {
                 } = event;
 
                 const {
+                    day,
+                    month,
+                    year
+                } = date
+
+                const {
                     selectedEvent
                 } = this.state;
-
-                if (this.state.events.length - index > this.props.numOfEvents) return null;
+                let eventDay = new Date(`${this.months[month]+2} ${day}, ${year}`);
+                let today = new Date();
+                if (eventDay.getTime() < today.getTime()) return null;
 
                 
                 let active = (eventActive) ? {backgroundColor: '#fff'} : {backgroundColor: '#fff'}
                 let clickedContainer = (selectedEvent === index) ? "containerOnClick" : "";
                 clickedContainer += ` container unselectable ${(type === "One" ? "clickable" : "")} ${type}`
                 return (
+                    <div style={{display: 'inline-block'}}>
                     <div key={name+date+time}
                         className={clickedContainer}
                         style={{    
@@ -165,8 +173,8 @@ class Calendar extends Component {
                     }}
                     >
                         <div className={`date unselectable ${type}`}>
-                            <h2 className={`${type}`}>{date.day}</h2>
-                            <h2 className={`${type}`}>{date.month}, {date.year}</h2>
+                            <h2 className={`${type}`}>{day}</h2>
+                            <h2 className={`${type}`}>{month}, {year}</h2>
                         </div>
                         <div className = {`info unselectable ${type}`}>
                             <div className={`eventData ${type}`}>
@@ -176,6 +184,7 @@ class Calendar extends Component {
                                 <p className={`${type}`}>points: {points}</p>
                             </div>
                         </div>
+                    </div>
                     </div>
                 )
                 

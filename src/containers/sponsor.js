@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Pie } from '@nivo/pie'
 import { Link } from 'react-router-dom'
-import { Header, Sponsors } from '../components'
+import { Header, Sponsors, Form } from '../components'
 import sponsors from '../data/Sponsors';
 import {
     fetchStatistics
@@ -203,12 +203,12 @@ class Sponsor extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div>
+                    <div className="item">
                         <div className="button">
                             <a href='/sponsorPackage.pdf'download> Download Sponsorship Package</a>
                         </div>
                     </div>
-                    <div>
+                    <div className="item">
                         <div className="button">
                             <a target="_blank" href='https://squareup.com/store/shpeucf/'> Donation Page</a>
                         </div>

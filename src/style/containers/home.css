@@ -12,12 +12,22 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
+
 #motto p{
     margin-top: 0px;
     padding: 40px;
     text-shadow: 2px 0 1px #000, -2px 0 1px #000, 0 2px 1px #000, 0 -2px 1px #000;
     font-size: 30px;
     color: #f0d03b;
+}
+
+.officehours {
+    display: flexbox;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: -webkit-flex;
+    flex-direction: row;
 }
 
 .title {

@@ -25,6 +25,7 @@ h3#title {
 
 #events.One {
     width: 90%;
+    overflow: auto;
 }
 
 .containerOnClick.One{
@@ -36,6 +37,7 @@ h3#title {
      overflow: hidden;
      background-color: #fff;
      height: 400px;
+     width: 400px;
      margin: 5px 5% 0px 5%;
      padding: 4px;
 }
@@ -106,25 +108,28 @@ p.One{
 
 #events.Two {
     width: 90%;
+    height: 325px;
     flex-direction: row;
-    display: flexbox;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -moz-box;
-    display: -webkit-flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    box-shadow: 0 9px 0px 0px white inset,
+    0 -9px 0px 0px white inset,
+    6px 0 5px -4px rgba(31, 73, 125, 0.8) inset,
+    -6px 0 5px -4px rgba(31, 73, 125, 0.8) inset;
+z-index: 300;
 }
 
 .container.Two{
     display: flex;
     overflow: hidden;
     flex-direction: column;
-
     border-radius: 5px;
     padding: 0px 10px 0px;
     margin: 10px 2px;
     flex: 1;
     height: 300px;
-    width: 100%;
+    width: 275px;
     transition: .2s ease;
     -moz-transition: .2s ease;
     -o-transition: .2s ease;
@@ -257,6 +262,11 @@ h3.Two {
     margin: 0px !important;
     font-weight: normal;
     
+}
+
+.row p {
+    height: 25px;
+    overflow: auto;
 }
 
 p.Two{
