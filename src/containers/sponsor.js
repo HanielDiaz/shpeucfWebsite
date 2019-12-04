@@ -63,18 +63,30 @@ class Sponsor extends Component {
                 ]
             },
             {
-                name: 'Ethinicity',
+                name: 'Class Standing',
                 data: [
                 {
-                    id: "Hispanic",
-                    label: "Hispanic",
-                    value: 90,
+                    id: "Freshman",
+                    label: "Freshman",
+                    value: 35,
                     color: "hsl(80, 70%, 50%)"
                 },
                 {
-                    id: "Non-Hispanic",
-                    label: "Non-Hispanic",
-                    value: 10,
+                    id: "Sophomore",
+                    label: "Sophomore",
+                    value: 55,
+                    color: "hsl(80, 70%, 50%)"
+                },
+                {
+                    id: "Junior",
+                    label: "Junior",
+                    value: 42,
+                    color: "hsl(80, 70%, 50%)"
+                },
+                {
+                    id: "Senior",
+                    label: "Senior",
+                    value: 78,
                     color: "hsl(80, 70%, 50%)"
                 }
             ]

@@ -203,6 +203,9 @@ class Calendar extends Component {
                 <h3 id="title">{title}</h3>
                 {this.renderItem("Two")}
                 {this.renderModal()}
+                <div className="downloadCalendar">
+                <a target="_blank" href='https://calendar.google.com/calendar/b/1/embed?showPrint=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=shpe.ucf.chapter%40gmail.com&amp;color=%23711616&amp;ctz=America%2FNew_York'> View Google Calendar</a>
+                </div>
             </div>
         )
     }
