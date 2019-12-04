@@ -147,16 +147,24 @@ class Calendar extends Component {
                 } = event;
 
                 const {
+                    day,
+                    month,
+                    year
+                } = date
+
+                const {
                     selectedEvent
                 } = this.state;
-
-                if (this.state.events.length - index > this.props.numOfEvents) return null;
+                let eventDay = new Date(`${this.months[month]+2} ${day}, ${year}`);
+                let today = new Date();
+                if (eventDay.getTime() < today.getTime()) return null;
 
                 
                 let active = (eventActive) ? {backgroundColor: '#fff'} : {backgroundColor: '#fff'}
                 let clickedContainer = (selectedEvent === index) ? "containerOnClick" : "";
                 clickedContainer += ` container unselectable ${(type === "One" ? "clickable" : "")} ${type}`
                 return (
+                    <div style={{display: 'inline-block'}}>
                     <div key={name+date+time}
                         className={clickedContainer}
                         style={{    
@@ -168,8 +176,8 @@ class Calendar extends Component {
                     }}
                     >
                         <div className={`date unselectable ${type}`}>
-                            <h2 className={`${type}`}>{date.day}</h2>
-                            <h2 className={`${type}`}>{date.month}, {date.year}</h2>
+                            <h2 className={`${type}`}>{day}</h2>
+                            <h2 className={`${type}`}>{month}, {year}</h2>
                         </div>
                         <div className = {`info unselectable ${type}`}>
                             <div className={`eventData ${type}`}>
@@ -179,6 +187,7 @@ class Calendar extends Component {
                                 <p className={`${type}`}><img className='icon' src={trophyImg}/> {points}</p>
                             </div>
                         </div>
+                    </div>
                     </div>
                 )
                 
@@ -197,6 +206,9 @@ class Calendar extends Component {
                 <h3 id="title">{title}</h3>
                 {this.renderItem("Two")}
                 {this.renderModal()}
+                <div className="downloadCalendar">
+                <a target="_blank" href='https://calendar.google.com/calendar/b/1/embed?showPrint=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=shpe.ucf.chapter%40gmail.com&amp;color=%23711616&amp;ctz=America%2FNew_York'> View Google Calendar</a>
+                </div>
             </div>
         )
     }

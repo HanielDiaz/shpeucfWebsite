@@ -1,6 +1,6 @@
 table#officeHours {
 	width: 100%;
-	margin: auto;
+	/* margin: auto; */
 }
 
 div.innerOfficeHours{
@@ -16,19 +16,26 @@ h3#officeHours {
 	text-align: center;
 }
 
-tr#color{
+tr#color {
+	border-top: 1px outset transparent;
 	background-color: #fcf5d2;
-	}
-tr#nocolor{
-	}
+}
+
+tr#nocolor {
+	z-index: 0;
+	border-top: 1px outset transparent;
+}
 	
 tr#color:hover {
-	border: 1px outset #292929;
+	z-index: 1;
+	border-top: 1px outset #292929;
+	border-bottom: 1px outset #292929;
 	border-radius: 5px;
 }
 
 tr#nocolor:hover {
-	border: 1px outset #292929;
+	border-top: 1px outset #292929;
+	border-bottom: 1px outset #292929;
 	border-radius: 5px;
 }
 

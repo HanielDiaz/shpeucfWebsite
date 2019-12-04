@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Pie } from '@nivo/pie'
 import { Link } from 'react-router-dom'
-import { Header, Sponsors } from '../components'
+import { Header, Sponsors, Form } from '../components'
 import sponsors from '../data/Sponsors';
 import {
     fetchStatistics
@@ -63,18 +63,30 @@ class Sponsor extends Component {
                 ]
             },
             {
-                name: 'Ethinicity',
+                name: 'Class Standing',
                 data: [
                 {
-                    id: "Hispanic",
-                    label: "Hispanic",
-                    value: 90,
+                    id: "Freshman",
+                    label: "Freshman",
+                    value: 35,
                     color: "hsl(80, 70%, 50%)"
                 },
                 {
-                    id: "Non-Hispanic",
-                    label: "Non-Hispanic",
-                    value: 10,
+                    id: "Sophomore",
+                    label: "Sophomore",
+                    value: 55,
+                    color: "hsl(80, 70%, 50%)"
+                },
+                {
+                    id: "Junior",
+                    label: "Junior",
+                    value: 42,
+                    color: "hsl(80, 70%, 50%)"
+                },
+                {
+                    id: "Senior",
+                    label: "Senior",
+                    value: 78,
                     color: "hsl(80, 70%, 50%)"
                 }
             ]
@@ -203,12 +215,12 @@ class Sponsor extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div>
+                    <div className="item">
                         <div className="button">
                             <a href='/sponsorPackage.pdf'download> Download Sponsorship Package</a>
                         </div>
                     </div>
-                    <div>
+                    <div className="item">
                         <div className="button">
                             <a target="_blank" href='https://squareup.com/store/shpeucf/'> Donation Page</a>
                         </div>
