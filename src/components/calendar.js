@@ -6,6 +6,9 @@ import {
 } from './modal'
 import '../style/components/calendar.css';
 // import '../style/main.css';
+import timeImg from '../assets/clock-time-2.png';
+import locImg from '../assets/location-512.png';
+import trophyImg from '../assets/trophy.png';
 
 class Calendar extends Component {
     constructor(props) {
@@ -114,9 +117,9 @@ class Calendar extends Component {
                             <h2>{month }, {year}</h2>
                         </div>
                         <div className="info">
-                            <p>time: {time}</p>
-                            <p>Location: {location}</p>
-                            <p>points: {points}</p>
+                            <p><img className='icon' src={timeImg}/> {time}</p>
+                            <p><img className='icon' src={locImg}/> {location}</p>
+                            <p><img className='icon' src={trophyImg}/> {points}</p>
                         </div>
                         <p>description: {description}</p>
                     </div>
@@ -171,9 +174,9 @@ class Calendar extends Component {
                         <div className = {`info unselectable ${type}`}>
                             <div className={`eventData ${type}`}>
                                 <h3 className={`meetingTitle ${type}`}>{name}</h3>
-                                <p className={`${type}`}>Time: {time}</p>
-                                <p className={`${type}`}>Location: {location}</p>
-                                <p className={`${type}`}>points: {points}</p>
+                                <p className={`${type}`}><img className='icon' src={timeImg}/> {time}</p>
+                                <p className={`${type}`}><img className='icon' src={locImg}/> {location}</p>
+                                <p className={`${type}`}><img className='icon' src={trophyImg}/> {points} points</p>
                             </div>
                         </div>
                     </div>

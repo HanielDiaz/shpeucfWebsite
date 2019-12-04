@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Header, Calendar, OfficeHours, Sponsors } from '../components'
+import { Social } from '../components/social'
 import {
     fetchEvents
 } from '../modules'
@@ -50,6 +51,7 @@ class Home extends Component {
                         />
                         <OfficeHours officeHourSchedule={officeHourSchedule} />
 							{/*<hr/>*/}
+                        <Social />
                         <h1 className="title">Sponsors</h1>
                         <Sponsors sponsors={sponsors} />
                     </div>

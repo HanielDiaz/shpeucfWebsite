@@ -43,6 +43,12 @@ div.officeHours{
 	clear: both;
 }
 
+div.social{
+	width: 40%;
+	margin: auto;
+	clear: both;
+}
+
 div#hours {
 	width: 100%;
 	padding: 0px 50px;

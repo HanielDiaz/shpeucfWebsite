@@ -265,3 +265,8 @@ p.Two{
     text-align: left;
     font-size: 20px;
 }
+
+img.icon{
+    height: 15px;
+    width: 15px;
+}
